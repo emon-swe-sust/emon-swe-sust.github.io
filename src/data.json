@@ -1,0 +1,577 @@
+{
+  "about": {
+    "descriptions": [
+      "Hello, I am currently serving as a Lecturer in the Institute of Information and Communication Technology at Shahjalal University of Science and Technology (SUST), Sylhet, since November 2023. I teach a range of foundational and advanced courses including Software Verification and Validation, Software Architecture and Design Pattern, Data Structures, Algorithm Design and Analysis, Competitive Programming, and Introduction to Software Engineering. I also mentor undergraduate students in their thesis and research projects.",
+      "Before joining SUST, I worked as a Software Engineer at Dynamic Solution Innovators (DSi) for over two and a half years. During that time, I was involved in impactful projects such as OpenCRVS (a civil registration platform) and InfoReach (a banking solution). I continue to collaborate with DSi as a consultant alongside my academic responsibilities.",
+      "My current research focuses on the intersection of Software Engineering and Artificial Intelligence, particularly exploring how Large Language Models (LLMs) can support and enhance software development practices. I am currently leading two research projects in this area in collaboration with undergraduate students. I aim to pursue a Ph.D. in Software Engineering, with a focus on intelligent systems and AI-assisted software development tools, to contribute further to the field through research and innovation.  "
+    ],
+    "skills": {
+      "descriptions": "",
+      "languages": ["JavaScript", "Typescript", "Java", "C", "C++", "Python"],
+      "web_dev": [
+        "ReactJS",
+        "Angular",
+        "HapiJS",
+        "NodeJS",
+        "GraphQL",
+        "Rest",
+        "Spring Boot",
+        "Redux",
+        "MongoDB",
+        "ActiveMQ",
+        "Redis",
+        "JQuery"
+      ],
+      "tools": [
+        "Git",
+        "Docker",
+        "Github",
+        "Postman",
+        "fhir",
+        "OpenHIM",
+        "NGINX"
+      ],
+      "data_science": [
+        "Machine Learning",
+        "LLMs",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Scikit-learn",
+        "Jupyter Notebook"
+      ]
+    },
+    "organizations": {
+      "description": "Throughout my life, I have never been content with a mundane existence. As someone who loves being around people and taking charge, I've always strived to maintain a healthy social life. This approach has helped me tremendously through various ups and downs. I've been fortunate enough to be a part of several wonderful organizations, each one more exceptional than the last. I cherish each of these experiences dearly and feel grateful for the opportunities they have presented to me.",
+      "organization_list": [
+        {
+          "title": "SWE Society",
+          "title_link": "https://www.facebook.com/swesocietysust/",
+          "logo-light": "/organizations/swe-black.png",
+          "logo-dark": "/organizations/swe-white.png",
+          "year": "Feb 2022 - Feb 2023",
+          "titleSecond": "General Secretary"
+        },
+        {
+          "title": "SWE Society",
+          "title_link": "https://www.facebook.com/swesocietysust/",
+          "logo-light": "/organizations/swe-black.png",
+          "logo-dark": "/organizations/swe-white.png",
+          "year": "Nov 2019 - Feb 2022",
+          "titleSecond": "Assistant General Secretary"
+        },
+        {
+          "title": "SUST ACM Student Chapter",
+          "title_link": "https://www.facebook.com/sustacmsc",
+          "logo-light": "/organizations/acm.png",
+          "logo-dark": "/organizations/acm.png",
+          "year": "Dec 2021 - Jan 2023",
+          "titleSecond": "Mentor (Corporate Team)"
+        },
+        {
+          "title": "SUST ACM Student Chapter",
+          "title_link": "https://www.facebook.com/sustacmsc",
+          "logo-light": "/organizations/acm.png",
+          "logo-dark": "/organizations/acm.png",
+          "year": "Feb 2020 - Nov 2021",
+          "titleSecond": "Assistant Organizing Secretary"
+        },
+        {
+          "title": "Bengali.AI",
+          "title_link": "https://www.facebook.com/bengaliAI",
+          "logo-light": "/organizations/ba.jpeg",
+          "logo-dark": "/organizations/ba.jpeg",
+          "year": "Oct 2021 - Feb 2023",
+          "titleSecond": "Research Assistant"
+        },
+        {
+          "title": "তারুণ্যের স্বপ্ন ফাউন্ডেশন",
+          "title_link": "https://www.facebook.com/profile.php?id=100063963033631",
+          "logo-light": "/organizations/tarunno.jpeg",
+          "logo-dark": "/organizations/tarunno.jpeg",
+          "year": "July 2019 - May 2020",
+          "titleSecond": "Secretary of Science and Technology"
+        }
+      ]
+    }
+  },
+  "education": [
+    {
+      "title": "Shahjalal University of Science and Technology",
+      "title_link": "http://sust.edu/",
+      "logo-light": "sust-logo.png",
+      "logo-dark": "sust-logo.png",
+      "cgpa": "3.89/4.00 [2nd/50]",
+      "year": "2018-2022",
+      "titleSecond": "B.Sc. in Software Engineering",
+      "publications": [
+        {
+          "title": "BaDLAD: A Large Multi-Domain Bengali Document Layout Analysis Dataset",
+          "description": "BaDLAD is the first large Bengali Document Layout Analysis Dataset containing 33,695 annotated samples from six domains. This dataset can help develop deep learning-based models for OCR and document transcription in Bengali language. Preliminary experiments show the efficacy of BaDLAD in training these models.",
+          "link": "https://arxiv.org/abs/2303.05325"
+        }
+      ],
+      "course_works": {
+        "first_row": [
+          "Design Pattern",
+          "Web Technology",
+          "Database Management System",
+          "Algorithm and Data Structure",
+          "Operating Systems "
+        ],
+        "second_row": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Computer Network",
+          "Object Oriented Programming",
+          "Discrete Mathematics"
+        ]
+      },
+      "location": "Akhalia, Sylhet, Bangladesh",
+      "location_link": "https://goo.gl/maps/SydSEEfiUQ31hV34A",
+      "description": "Shahjalal University of Science and Technology (SUST) is a public research university in Sylhet, Bangladesh. It offers undergraduate and graduate programs in science, engineering, and humanities across eight schools."
+    },
+    {
+      "title": "Birshreshtha Munshi Abdur Rouf Public College, BMRPC",
+      "title_link": "https://abdurroufcollege.ac.bd/",
+      "logo-light": "BMARPC.png",
+      "logo-dark": "BMARPC.png",
+      "gpa": "5.00/5.00",
+      "year": "2016-2018",
+      "titleSecond": "Higher Secondary Certificate",
+      "course_works": {
+        "first_row": ["Physics", "Chemistry", "Mathematics"],
+        "second_row": ["ICT", "Biology", "English"]
+      },
+      "location": "Peelkhana, Dhaka, Bangladesh",
+      "location_link": "https://goo.gl/maps/hmM1eAUXer1zfuwr6"
+    },
+    {
+      "title": "Brahmondi K.K.M. Government High School",
+      "title_link": "https://en.wikipedia.org/wiki/Brahmondi_Kamini_Kishore_Moulik_Government_High_School",
+      "logo-light": "KKM.png",
+      "logo-dark": "KKM.png",
+      "gpa": "5.00/5.00",
+      "year": "2005-2015",
+      "titleSecond": "Secondary School Certificate",
+      "course_works": {
+        "first_row": ["Physics", "Chemistry", "Mathematics"],
+        "second_row": ["Bangla", "Biology", "English"]
+      },
+      "location": "Narsingdi, Dhaka, Bangladesh",
+      "location_link": "https://goo.gl/maps/gBXkQ5mqbBGDnuN67"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Shahjalal University of Science and Technology",
+      "title_link": "https://www.sust.edu",
+      "logo-light": "sust-logo.png",
+      "logo-dark": "sust-logo.png",
+      "year": "Nov 2023 - Present",
+      "titleSecond": "Lecturer - Software Engineering, IICT",
+      "technologies": [],
+      "involvements": [
+        "Teaching a diverse range of core and advanced computing courses including Software Verification and Validation, Software Architecture and Design Patterns, Data Structures, Algorithm Design and Analysis, Competitive Programming, and Introduction to Software Engineering. My focus is on delivering clear, practical, and engaging content to foster deep understanding and problem-solving skills among students.",
+        "Guiding students with their software engineering projects, helping them apply theoretical concepts to real-world scenarios, and encouraging innovative thinking and practical problem-solving.",
+        "Mentoring students on their undergraduate thesis and research projects, providing guidance on research methodologies, technical writing, and experimental design to help them produce quality work and develop as independent researchers.",
+        "Collaborating with students and colleagues on research initiatives, with the goal of solving real-world problems, advancing shared knowledge, and cultivating a culture of inquiry and innovation within the department."
+      ],
+      "location": "Akhalia, Sylhet, Bangladesh",
+      "location_link": "https://maps.app.goo.gl/tpKyp5hfnxf14fnj7"
+    },
+    {
+      "title": "Dynamic Solution Innovators",
+      "title_link": "https://www.dsinnovators.com/",
+      "logo-light": "dsi.png",
+      "logo-dark": "dsi-dark.png",
+      "year": "Jul 2023",
+      "titleSecond": "Assistant Software Engineer",
+      "technologies": [
+        "Java",
+        "Javascript",
+        "JQuery",
+        "Spring Boot",
+        "React",
+        "ActiveMQ",
+        "Redis",
+        "MongoDB"
+      ],
+      "involvements": [
+        "Contributing building pages to help clients to manage their audiences, analysis audience responses, generate bills for their audiences and so on.",
+        "Engaged in a sizable Spring MVC project tailored for orchestrating campaign-driven offers, advertisements, and direct mail operations.",
+        "Developing RESTful services utilizing Spring Boot, Express.js, and Node.js to facilitate streamlined AJAX calls and incorporate sophisticated functionalities.",
+        "Engaged in the construction of a bespoke editor using React.js, empowering users to craft tailored email, SMS, and advertising campaigns for specific audiences."
+      ],
+      "location": "Mohakhali DOHS, Dhaka, Bangladesh",
+      "location_link": "https://goo.gl/maps/Co6Z6tzxCiefe1KcA"
+    },
+    {
+      "title": "Dynamic Solution Innovators",
+      "title_link": "https://www.dsinnovators.com/",
+      "logo-light": "dsi.png",
+      "logo-dark": "dsi-dark.png",
+      "year": "Mar 2022 - Jun 2023",
+      "titleSecond": "Junior Software Engineer",
+      "technologies": [
+        "Java",
+        "Javascript",
+        "Typescript",
+        "Spring Boot",
+        "Docker",
+        "ReactJS",
+        "Jest",
+        "Angular",
+        "OpenHIM",
+        "fhir",
+        "nginx"
+      ],
+      "involvements": [
+        "Involved in the development of the Health Data Architecture(HDA), a groundbreaking product from A2i. My responsibilities include constructing a microservice bus, creating an adapter for Health service provider systems and developing a patient portal to link patient with HDA",
+        "Collaborated with the <a href=\"https://www.opencrvs.org/\">OpenCRVS</a> team to enhance the Client Microservice, with a focus on Record Audit, Work Queue, Duplicate Records, Application Configuration, Team, Header, Component Library, and Settings. Designed and developed the Left Navigation feature from scratch.",
+        "Also made contributions on <a href=\"https://www.opencrvs.org/\">OpenCRVS</a> with other microservices such as User-Management and API-Gateway and also wrote unit tests and conducted code reviews."
+      ],
+      "location": "Mohakhali DOHS, Dhaka, Bangladesh",
+      "location_link": "https://goo.gl/maps/Co6Z6tzxCiefe1KcA"
+    },
+    {
+      "title": "Dynamic Solution Innovators",
+      "title_link": "https://www.dsinnovators.com/",
+      "logo-light": "dsi.png",
+      "logo-dark": "dsi-dark.png",
+      "year": "Sep 2021 - Feb 2022",
+      "titleSecond": "Software Engineer Intern",
+      "technologies": [
+        "Typescript",
+        "ReactJS",
+        "GraphQL",
+        "HapiJS",
+        "OpenHIM",
+        "fhir",
+        "Redux",
+        "MongoDB"
+      ],
+      "involvements": [
+        "On learning phases created a simple <a href=\"https://emonnn-todo.netlify.app/\">ToDo</a> application using React and Tailwind css where users can create, update, delete ToDo.",
+        "Then created a mock <a href=\"https://e-com-redux-dsi.netlify.app/\">E-Commerce</a> website with mock API where users can select products, increase or decrease the quantity, checkout with the shipment information.",
+        "Worked on <a href=\"https://www.opencrvs.org/\">OpenCRVS</a> and performed bug fixes on a client microservice, contributed to the development of a component library, and implemented enhancements to the user profile and form-field generator features."
+      ],
+      "location": "Mohakhali DOHS, Dhaka, Bangladesh",
+      "location_link": "https://goo.gl/maps/Co6Z6tzxCiefe1KcA"
+    }
+  ],
+  "projects": [
+    {
+      "title": "InfoReach",
+      "pictures": [],
+      "year": "Apr 2023 - May 2024",
+      "titleSecond": "System that allow clients to maintain their audience, engage audiences with offers, campaigns and direct mails",
+      "association_with": "DSi",
+      "image_top": true,
+      "technologies": [
+        "Typescript",
+        "JavaScript",
+        "ReactJS",
+        "JQuery",
+        "Java",
+        "Spring Boot",
+        "Docker",
+        "ActiveMQ",
+        "Redis",
+        "NodeJS",
+        "MongoDB",
+        "PostgreSQL",
+        "Redux",
+        "MongoDB"
+      ],
+      "features": [
+        "Offer - Campaign Catalog",
+        "Targeting Rules",
+        "Audience Management",
+        "User Engagement form",
+        "Analytics",
+        "Media",
+        "Account Management",
+        "Customized Template",
+        "Activity Log",
+        "Invoice Management",
+        "Direct Mail",
+        "Landing Page"
+      ],
+      "involvements": [
+        "Contributing building pages to help clients to manage their audiences, analysis audience responses, generate bills for their audiences and so on.",
+        "Engaged in a sizable Spring MVC project tailored for orchestrating campaign-driven offers, advertisements, and direct mail operations.",
+        "Developing RESTful services utilizing Spring Boot, Express.js, and Node.js to facilitate streamlined AJAX calls and incorporate sophisticated functionalities.",
+        "Engaged in the construction of a bespoke editor using React.js, empowering users to craft tailored email, SMS, and advertising campaigns for specific audiences."
+      ]
+    },
+    {
+      "title": "OpenCRVS",
+      "title_link": "https://www.opencrvs.org/",
+      "pictures": [
+        "/projects/opencrvs/1.png",
+        "/projects/opencrvs/2.png",
+        "/projects/opencrvs/3.png",
+        "/projects/opencrvs/4.png",
+        "/projects/opencrvs/5.png",
+        "/projects/opencrvs/6.png",
+        "/projects/opencrvs/7.png"
+      ],
+      "year": "Sep 2021 - Sep 2022",
+      "github_link": "https://github.com/opencrvs",
+      "titleSecond": "Open Civil registration & Vital Statistics",
+      "association_with": "DSi",
+      "image_top": true,
+      "technologies": [
+        "Typescript",
+        "ReactJS",
+        "GraphQL",
+        "HapiJS",
+        "Docker",
+        "ElasticSearch",
+        "InfluxData",
+        "OpenHIM",
+        "Jest",
+        "fhir",
+        "Redux",
+        "MongoDB"
+      ],
+      "features": [
+        "Track nation-wide Birth, Death and Marriage of Civilians",
+        "Offline & low connectivity working",
+        "Real-time deduplication",
+        "Workqueues",
+        "Secure Device Access",
+        "Multi-language",
+        "Performance management",
+        "System configuration",
+        "Record Audit",
+        "Protecting Personally Identifiable Infomation",
+        "Available on any device",
+        "Feedback on application status"
+      ],
+      "involvements": [
+        "Contributed to the development of the Client Microservice by focusing on various features, including Record Audit, Work Queue, Duplicate Records, Application Configuration, Team, Header, Components Library, and Settings. Additionally, took ownership of developing the Left Navigation from scratch.",
+        "Apart from the Client Microservice, also worked on other microservices like User-Management and Api-Gateway, albeit on a smaller scale.",
+        "Utilized Jest to write unit tests and ensure code quality and functionality.",
+        "Conducted code reviews to identify and rectify bugs, ensuring a seamless and error-free codebase."
+      ]
+    },
+    {
+      "title": "Shared Health Record",
+      "pictures": ["/projects/SHR/1.png"],
+      "year": "Sep 2022 - Apr 2023",
+      "titleSecond": "Health Information Exchange, working around OpenHIE model",
+      "association_with": "DSi",
+      "image_top": true,
+      "technologies": [
+        "Java",
+        "Spring Boot",
+        "OpenHIM",
+        "Cassandra",
+        "Docker",
+        "MongoDB",
+        "MySQL",
+        "JavaScript",
+        "ReactJS",
+        "fhir"
+      ],
+      "features": [
+        "Facilitates seamless sharing of patient health information across diverse health service systems, providers, and organizations.",
+        "Utilizes the OpenHIE architecture, a standards-based, flexible, and modular framework for health information exchange, to enhance interoperability.",
+        "Integrates with OpenMRS, an open-source medical record system that manages patient health information and clinical workflows effectively.",
+        "Generates unique health identifiers for each patient, ensuring accurate patient identification across the healthcare ecosystem.",
+        "Supports the exchange of health information between different health service systems through the use of standards-based protocols and adapters, promoting efficient healthcare delivery.",
+        "Empowers patients to interact with the system via a Patient Portal, fostering patient engagement and participation in their healthcare journey.",
+        "Allows system administrators to oversee and regulate service activities, ensuring optimal performance."
+      ],
+      "involvements": [
+        "Collaborated on developing adapters that enable seamless communication between Shared Health Records and other systems, enhancing data sharing and interoperability.",
+        "Contributed to the development of a patient portal that empowers patients to engage with the system, enhancing patient-provider communication and promoting patient-centered care.",
+        "Participated on the development of a highly efficient microservice bus leveraging the power of OpenHIM, enabling seamless communication and data exchange between various healthcare systems and providers."
+      ]
+    },
+    {
+      "title": "Student Information System",
+      "title_link": "https://student-infosys.onrender.com/",
+      "pictures": ["/projects/SIS/1.png"],
+      "year": "April 2023",
+      "github_link": "https://github.com/emon-swe-sust/SMS",
+      "titleSecond": "The platform that enables students and teachers to work smarter and more efficiently.",
+      "association_with": "Upwork",
+      "technologies": [
+        "Javascript",
+        "ReactJS",
+        "NodeJS",
+        "Rest",
+        "MySQL",
+        "JWT"
+      ],
+      "features": [
+        "Empower administrators to create teachers and courses with ease and approve transcript request of students.",
+        "Allow teachers to create classes for their respective courses and approve student join requests.",
+        "Provide teachers with the ability to allocate marks to their students and create grade sheat.",
+        "Enable students to search classes and submit join requests to desired classes , view their transcript, download certificates, and access their daily schedules, thereby enhancing their educational experience."
+      ],
+      "involvements": [
+        "Crafted front-end user interface that includes pages for courses, course details, classes, class details, ensuring a seamless user experience.",
+        "Implemented class enrollment and profile pages, enabling students to easily sign up for classes and manage their personal information.",
+        "Ensured that the system features robust class management capabilities, including the ability for teachers to approve student join requests and allocate marks to their students.",
+        "Responsible for overall user interface issues"
+      ]
+    },
+    {
+      "title": "Metal Slug",
+      "title_link": "https://github.com/emon-swe-sust/Metal_Slug/releases/tag/v1.0",
+      "pictures": [
+        "/projects/metalslug/1.png",
+        "/projects/metalslug/2.png",
+        "/projects/metalslug/3.png",
+        "/projects/metalslug/4.png",
+        "/projects/metalslug/5.png",
+        "/projects/metalslug/6.png"
+      ],
+      "year": "July 2019",
+      "github_link": "https://github.com/emon-swe-sust/Metal_Slug",
+      "titleSecond": "A 2d shooting game",
+      "association_with": "Personal",
+      "technologies": ["Java", "libGDX", "Box2D"],
+      "features": [
+        "The game features a hero with the ability to jump, move forward, and retreat backwards with agility.",
+        "The hero can only withstand up to three bullets throughout the game.",
+        "The game includes various enemies, including a powerful boss that must be defeated to win."
+      ],
+      "involvements": [
+        "Developed the full core gameplay, including player controls, enemy behavior, collision detection, and game mechanics.",
+        "Integrated game elements using Java with libGDX and Box2D frameworks."
+      ]
+    },
+    {
+      "title": "Portfolio",
+      "title_link": "portfolio",
+      "pictures": [
+        "/projects/portfolio/1.png",
+        "/projects/portfolio/2.png",
+        "/projects/portfolio/3.png",
+        "/projects/portfolio/4.png",
+        "/projects/portfolio/5.png",
+        "/projects/portfolio/6.png"
+      ],
+      "year": "May 2023",
+      "github_link": "https://github.com/emon-swe-sust/portfolio",
+      "titleSecond": "A detailed portfolio to introduce myself.",
+      "association_with": "Personal",
+      "technologies": ["Javascript", "ReactJS"],
+      "features": [
+        "Introduction on landing page of portfolio to have a full overview.",
+        "Detailed overview of my experience and my activity on Experience page.",
+        "Project page to mention some of my major project with detailed description.",
+        "Educational background page to get to know about my educational background."
+      ],
+      "involvements": [
+        "My interest led me to develop this portfolio on my own."
+      ]
+    },
+    {
+      "title": "FileHub",
+      "title_link": "https://github.com/emon-swe-sust/FileHub/releases/tag/1.2",
+      "pictures": [
+        "/projects/filehub/1.png",
+        "/projects/filehub/2.png",
+        "/projects/filehub/3.png"
+      ],
+      "year": "June 2021",
+      "github_link": "https://github.com/emon-swe-sust/FileHub",
+      "titleSecond": "A simple tcp file sharing system",
+      "association_with": "Personal",
+      "technologies": ["Python", "tkinter", "Socket programming"],
+      "features": [
+        "Server creation: The system allows creating a server that enables clients to see and download files from it.",
+        "Active client connections: The server allows checking the active client connections and their respective IP addresses.",
+        "Connection to server: The system allows clients to connect to the server by providing the server's IP address and port number.",
+        "View available files: Clients can view all the available files on the server.",
+        "Download files: Clients can download files from the server and check the progress bar.",
+        "Delete files: Clients can delete files from the server and upload files to the server."
+      ],
+      "involvements": [
+        "Developed user-friendly GUI using the tkinter library, which provides an intuitive interface for users to interact with.",
+        "Implemented the file upload and connection functionalities."
+      ]
+    },
+    {
+      "title": "Tracker",
+      "pictures": ["/projects/tracker/1.jpg", "/projects/tracker/2.jpg"],
+      "year": "February 2020",
+      "github_link": "https://github.com/emon-swe-sust/Tracker",
+      "titleSecond": "An android app build to track SUST transports.",
+      "association_with": "Personal",
+      "technologies": ["C++", "Java", "php"],
+      "features": [
+        "Capable of providing the bus schedule for the university.",
+        "Capable of searching intended bus and track the bus location.",
+        "A very easy to use, user friendly graphical interface.",
+        "Very much light-weight, can operate on devices with low configuration."
+      ],
+      "involvements": [
+        "Configure <i>Gps Neo 6m</i> microcontroller and <i>esp8266 wifi moduler</i> with the system.",
+        "Contribute in the development of user interface"
+      ]
+    }
+  ],
+  "researches": [
+    {
+      "title": "Comparisons of Large Language Models for JavaScript Test Case Generation",
+      "info": "Ongoing Research",
+      "doi": "",
+      "website": "",
+      "dataset": "",
+      "link": "",
+      "year": "April 2025 - Present",
+      "description": "This study investigates the effectiveness of large language models (LLMs) in generating unit and end-to-end test cases for JavaScript code using Jest and Selenium. The research compares LLM performance under varying prompt contexts (code-only, contextual, and combined) and evaluates the generated tests using mutation testing, code coverage, and standard quality metrics. The project involves guiding two undergraduate students through idea development, dataset creation, prompt design, automation of evaluation pipelines, and manuscript preparation for peer-reviewed submission.",
+      "involvements": []
+    },
+    {
+      "title": "Evaluating LLM-Generated Commit Messages with Code and Issue Context",
+      "info": "Ongoing Research",
+      "doi": "",
+      "website": "",
+      "dataset": "",
+      "link": "",
+      "year": "May 2025 - Present",
+      "description": "This project studies how effectively large language models (LLMs) generate commit messages by combining information from code differences and related issue descriptions. The research uses curated data from open-source repositories and incorporates expert feedback for qualitative evaluation. It involves guiding two undergraduate students through research design and execution, dataset preparation, prompt experimentation, metric definition, and validation through industry collaboration.",
+      "involvements": []
+    },
+    {
+      "title": "Early Detection of Task Failures in Cloud Environments via Machine Learning and Feature Analytics",
+      "info": "Submitted for review (Vietnam Journal of Computer Science), under peer review",
+      "doi": "",
+      "website": "",
+      "dataset": "",
+      "link": "",
+      "year": "Jan 2025 - Jul 2025",
+      "description": "This study proposes a machine learning framework to predict task failures at submission time in cloud computing using the 2019 Google Borg Cluster dataset. It includes data preprocessing, multi-model evaluation, and analytical insights to enhance cloud scheduling systems.",
+      "involvements": [
+        "Supervised two undergraduate students in idea development and problem formulation.",
+        "Advised on literature review and research direction.",
+        "Provided guidance on methodology and modeling approaches.",
+        "Contributed to analysis, interpretation, and preparation of the manuscript for journal submission."
+      ]
+    },
+    {
+      "title": "BaDLAD: A Large Multi-Domain Bengali Document Layout Analysis Dataset",
+      "info": "Published in the International Conference on Document Analysis and Recognition (ICDAR) pages 326-341, August 2023.",
+      "doi": "https://link.springer.com/chapter/10.1007/978-3-031-41676-7_19",
+      "website": "https://bengaliai.github.io/badlad",
+      "dataset": "https://www.kaggle.com/datasets/reasat/badlad-train",
+      "link": "https://arxiv.org/abs/2303.05325",
+      "year": "Oct 2021 - Jan 2023",
+      "description": "BaDLAD is the first large Bengali Document Layout Analysis Dataset containing 33,695 annotated samples from six domains. This dataset can help develop deep learning-based models for OCR and document transcription in Bengali language. Preliminary experiments show the efficacy of BaDLAD in training these models.",
+      "involvements": [
+        "Managed a team of 13 annotators to create BaDLAD, the most extensive multi-domain Bengali Document Layout Analysis Dataset, featuring 33,700 document images and over 710,000 polygon-based annotations.",
+        "Standardized annotation exports, conducted in-depth data analysis and visualizations, and optimized the dataset for machine learning compatibility and validation workflows.",
+        "Co-authored a publication introducing BaDLAD, which was used to train deep learning models for Bengali document digitization and layout understanding.",
+        "Developed a Bengali lemmatizer and assembled the largest known dataset of Bengali verb forms, systematically organized by grammatical categories and tense."
+      ]
+    }
+  ]
+}
