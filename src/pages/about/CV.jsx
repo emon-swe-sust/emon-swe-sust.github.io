@@ -5,7 +5,7 @@ import { saveAs } from "file-saver";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
-const DownloadButton = styled.div`
+const DownloadButton = styled.button`
   color: ${(props) => props.theme.colors.success};
   margin: 24px 0;
   font-size: x-large;
@@ -39,7 +39,7 @@ function CV() {
   };
   return (
     <DownloadButton theme={theme} onClick={downloadPDF}>
-      Get my CV from here!
+      Download CV
       <FontAwesomeIcon icon={faFileArrowDown} />
     </DownloadButton>
   );

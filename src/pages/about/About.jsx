@@ -11,6 +11,7 @@ import Skill from "./Skill";
 import Title from "./../../components/Title";
 import NextPage from "../../components/NextPage";
 import Research from "./Research";
+import { TitleLabel } from "../../components/utils";
 
 const ProfilePicture = styled.img`
   border-radius: 50%;
@@ -114,6 +115,14 @@ function About({ headerInitialHeight }) {
               {degree.about.descriptions.map((description, idx) => (
                 <P key={idx}>{description}</P>
               ))}
+              <TitleLabel theme={theme} style={{ marginBottom: "24px" }}>
+                Research Interest
+              </TitleLabel>
+              {degree.about.researchInterest.map((interest, idx) => (
+                <P key={idx}>
+                  {idx + 1}. {interest}
+                </P>
+              ))}
               <CV />
             </ProfileInfoContainer>
             <DPContainer>
@@ -136,6 +145,7 @@ function About({ headerInitialHeight }) {
               </animated.div>
             </DPContainer>
           </ProfileContainer>
+
           <Research />
           <Skill />
           <NextPage to="/experience">Career Journey</NextPage>
