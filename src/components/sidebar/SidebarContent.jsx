@@ -73,7 +73,7 @@ function SidebarContent(props) {
   const location = useLocation();
 
   const handleEmailClick = () => {
-    window.location.href = "mailto:emon@example.com";
+    window.location.href = "mailto:emon-iict@sust.edu";
   };
 
   const onItemClick = (link) => {

@@ -155,6 +155,12 @@ function About({ headerInitialHeight }) {
                     }
                   />
                   <Link
+                    to="https://www.sust.edu/institutes/iict/faculty/emon-iict@sust.edu"
+                    target="_blank"
+                  >
+                    <StyledIcon src="/sust-logo.png" />
+                  </Link>
+                  <Link
                     to="https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en"
                     target="_blank"
                   >
