@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "./components/context/Theme";
 import Router from "./Router";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 const Row = styled(FlexRow)`
   gap: 0px;
@@ -84,7 +84,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ScrollToTop />
       <Row>
         {windowWidth > 768 && <SidebarDesktop />}
@@ -108,7 +108,7 @@ function App() {
           )}
         </ThemeIcon>
       </Row>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

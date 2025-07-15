@@ -12,6 +12,7 @@ import Title from "./../../components/Title";
 import NextPage from "../../components/NextPage";
 import Research from "./Research";
 import { TitleLabel } from "../../components/utils";
+import BulletPoints from "../../components/BulletPoints";
 
 const ProfilePicture = styled.img`
   border-radius: 50%;
@@ -115,14 +116,6 @@ function About({ headerInitialHeight }) {
               {degree.about.descriptions.map((description, idx) => (
                 <P key={idx}>{description}</P>
               ))}
-              <TitleLabel theme={theme} style={{ marginBottom: "24px" }}>
-                Research Interest
-              </TitleLabel>
-              {degree.about.researchInterest.map((interest, idx) => (
-                <P key={idx}>
-                  {idx + 1}. {interest}
-                </P>
-              ))}
               <CV />
             </ProfileInfoContainer>
             <DPContainer>
@@ -145,7 +138,13 @@ function About({ headerInitialHeight }) {
               </animated.div>
             </DPContainer>
           </ProfileContainer>
-
+          <TitleLabel theme={theme} style={{ marginBottom: "24px" }}>
+            Research Interest
+          </TitleLabel>
+          <BulletPoints
+            bulletPoints={degree.about.researchInterest}
+            gap={"8px"}
+          />
           <Research />
           <Skill />
           <NextPage to="/experience">Career Journey</NextPage>

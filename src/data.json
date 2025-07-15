@@ -6,11 +6,12 @@
       "My current research focuses on the intersection of Software Engineering and Artificial Intelligence, particularly exploring how Large Language Models (LLMs) can support and enhance software development practices. I am currently leading two research projects in this area in collaboration with undergraduate students. I aim to pursue a Ph.D. in Software Engineering, with a focus on intelligent systems and AI-assisted software development tools, to contribute further to the field through research and innovation.  "
     ],
     "researchInterest": [
-      "Intelligent software engineering with AI-driven bug detection and automated program repair",
-      "Automated test case generation and context-aware code completion",
-      "Developer productivity tools and LLM-assisted development",
-      "Software quality assessment and empirical evaluation",
-      "Human-centric aspects of modern software development and collaboration"
+      "Automated development tools, including code and test-case generation, review, repair, and documentation",
+      "Software architecture and requirements engineering, with focus on system design, evolution, and specification",
+      "Empirical software engineering, covering design, testing, debugging, maintenance, and developer productivity",
+      "Human-centric aspects, such as usability, accessibility, collaboration, and developer behavior",
+      "Performance and optimization, focusing on scalability, efficiency, and cost-aware systems",
+      "Applications of LLMs, and AI/ML, in software engineering, other domains"
     ],
     "skills": {
       "descriptions": "",

@@ -166,7 +166,7 @@ const IndividualResearch = ({ research }) => {
 
 function Research() {
   return (
-    <div>
+    <div style={{ marginTop: "32px" }}>
       <Title>Research Involvements</Title>
       <ResearchContainer>
         {data.researches.map((project, idx) => (

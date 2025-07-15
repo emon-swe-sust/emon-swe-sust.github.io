@@ -33,6 +33,7 @@ const BulletPoints = ({ bulletPoints, type, bulletIcon, gap }) => {
                 icon={faCircleInfo}
                 style={{
                   color: theme.colors.titleSecondary,
+                  marginTop: "2px",
                 }}
               />
             )}
