@@ -5,7 +5,6 @@ import Header from "./Header";
 import { BodyContainer } from "../../App";
 import { animated } from "react-spring";
 import CV from "./CV";
-import Email from "./Email";
 import degree from "./../../data.json";
 import Skill from "./Skill";
 import Title from "./../../components/Title";
@@ -13,6 +12,12 @@ import NextPage from "../../components/NextPage";
 import Research from "./Research";
 import { TitleLabel } from "../../components/utils";
 import BulletPoints from "../../components/BulletPoints";
+import Email from "./Email";
+import {
+  ContactItem,
+  StyledIcon,
+} from "../../components/sidebar/SidebarContent";
+import { Link } from "react-router-dom";
 
 const ProfilePicture = styled.img`
   border-radius: 50%;
@@ -135,6 +140,42 @@ function About({ headerInitialHeight }) {
                 >
                   Lecturer, IICT, SUST
                 </div>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "8px",
+                    marginTop: "16px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <StyledIcon
+                    src="/icons/mail.png"
+                    onClick={() =>
+                      (window.location.href = "mailto:emon-iict@sust.edu")
+                    }
+                  />
+                  <Link
+                    to="https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en"
+                    target="_blank"
+                  >
+                    <StyledIcon src="icons/google_scholar.png" />
+                  </Link>
+                  <Link
+                    to="https://www.linkedin.com/in/emon-swe-sust/"
+                    target="_blank"
+                  >
+                    <StyledIcon src="/icons/linkedin.png" target="_blank" />
+                  </Link>
+                  <Link to="https://github.com/emon-swe-sust" target="_blank">
+                    <StyledIcon
+                      src={
+                        theme.variant === "light"
+                          ? "/icons/github-dark.png"
+                          : "/icons/github-light.png"
+                      }
+                    />
+                  </Link>
+                </div>
               </animated.div>
             </DPContainer>
           </ProfileContainer>
@@ -150,7 +191,7 @@ function About({ headerInitialHeight }) {
           <NextPage to="/experience">Career Journey</NextPage>
         </Container>
       </BodyContainer>
-      <Email />
+      {/* <Email /> */}
     </div>
   );
 }

@@ -79,7 +79,7 @@ function Header(props) {
             Hi, I'm <ColoredText theme={theme}>Emon</ColoredText>
           </TopTitle>
           <BottomTitle>
-            a software engineering educator, researcher, and practitioner.
+            a software engineering teacher, researcher, and practitioner.
           </BottomTitle>
         </animated.div>
       </TitleContainer>

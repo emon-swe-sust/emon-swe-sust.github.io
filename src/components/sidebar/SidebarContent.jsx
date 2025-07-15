@@ -26,7 +26,7 @@ const NavItem = styled.div`
     background-color: ${props.theme.colors.navSelected};`}
 `;
 
-const StyledImg = styled.img`
+export const StyledIcon = styled.img`
   height: 28px;
   cursor: pointer;
   @media (max-width: 768px) {
@@ -50,12 +50,13 @@ const ContactMe = styled.div`
   font-family: "Tajawal", sans-serif;
 `;
 
-const ContactItem = styled(FlexRow)`
+export const ContactItem = styled(FlexRow)`
   gap: 8px;
   align-items: center;
   @media (max-width: 768px) {
     gap: 4px;
   }
+  cursor: pointer;
 `;
 
 const P = styled.p`
@@ -70,6 +71,10 @@ function SidebarContent(props) {
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const handleEmailClick = () => {
+    window.location.href = "mailto:emon@example.com";
+  };
 
   const onItemClick = (link) => {
     navigate(link);
@@ -120,26 +125,26 @@ function SidebarContent(props) {
               to="https://www.sust.edu/institutes/iict/faculty/emon-iict@sust.edu"
               target="_blank"
             >
-              <StyledImg src="/sust-logo.png" />
+              <StyledIcon src="/sust-logo.png" />
             </Link>
             <Link
               to="https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en"
               target="_blank"
             >
-              <StyledImg src="icons/google_scholar.png" />
+              <StyledIcon src="icons/google_scholar.png" />
             </Link>
             <Link
               to="https://www.linkedin.com/in/emon-swe-sust/"
               target="_blank"
             >
-              <StyledImg src="/icons/linkedin.png" target="_blank" />
+              <StyledIcon src="/icons/linkedin.png" target="_blank" />
             </Link>
             <Link to="https://github.com/emon-swe-sust" target="_blank">
-              <StyledImg src="/icons/github-light.png" />
+              <StyledIcon src="/icons/github-light.png" />
             </Link>
-            <Link to="https://www.facebook.com/em0o0on/" target="_blank">
-              <StyledImg src="/icons/facebook.png" />
-            </Link>
+            {/* <Link to="https://www.facebook.com/em0o0on/" target="_blank">
+              <StyledIcon src="/icons/facebook.png" />
+            </Link> */}
             {/* <Link to="https://leetcode.com/emonnn/">
               <StyledImg src="/icons/leet-code-white.png" />
             </Link>
@@ -150,12 +155,12 @@ function SidebarContent(props) {
               <StyledImg src="/icons/codeforces.png" />
             </Link> */}
           </IconContainer>
-          <ContactItem>
-            <StyledImg src="/icons/mail.png" />
-            <P>emon.swe.sust@gmail.com</P>
+          <ContactItem onClick={handleEmailClick}>
+            <StyledIcon src="/icons/mail.png" />
+            <P>emon-iict@sust.edu</P>
           </ContactItem>
           <ContactItem>
-            <StyledImg src="/icons/phone.png" />
+            <StyledIcon src="/icons/phone.png" />
             <P>+8801521702334</P>
           </ContactItem>
         </ContactMe>
