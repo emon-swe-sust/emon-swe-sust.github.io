@@ -11,6 +11,7 @@
       "Empirical software engineering, covering design, testing, debugging, maintenance, and developer productivity",
       "Human-centric aspects, such as usability, accessibility, collaboration, and developer behavior",
       "Performance and optimization, focusing on scalability, efficiency, and cost-aware systems",
+      "Software integration, build systems, modularity, and maintenance.",
       "Applications of LLMs, and AI/ML, in software engineering, other domains"
     ],
     "skills": {
