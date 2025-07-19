@@ -7,12 +7,10 @@
     ],
     "researchInterest": [
       "Automated development tools, including code and test-case generation, review, repair, and documentation",
-      "Software architecture and requirements engineering, with focus on system design, evolution, and specification",
-      "Empirical software engineering, covering design, testing, debugging, maintenance, and developer productivity",
-      "Human-centric aspects, such as usability, accessibility, collaboration, and developer behavior",
-      "Performance and optimization, focusing on scalability, efficiency, and cost-aware systems",
+      "Human-centric aspects of software engineering, Empirical software engineering",
+      "Software performance and optimization, software architecture and requirements engineering",
       "Software integration, build systems, modularity, and maintenance.",
-      "Applications of LLMs, and AI/ML, in software engineering, other domains"
+      "Applications of AI/ML in applied domains (e.g., healthcare, education, finance, etc.)"
     ],
     "skills": {
       "descriptions": "",
