@@ -6,11 +6,13 @@
       "My current research focuses on the intersection of Software Engineering and Artificial Intelligence, particularly enhancing software reliability, program analysis, optimizing software maintenance, automating software engineering processes, such as finding and fixing bugs, generating test cases, and building smarter developer tools. I am currently leading two research projects in this area in collaboration with undergraduate students. I aim to pursue a Ph.D. in Software Engineering, with a focus on intelligent systems and AI-assisted software development tools, to contribute further to the field through research and innovation.  "
     ],
     "researchInterest": [
-      "Automated development tools, software integration and maintenance",
-      "Human-centric aspects of software engineering, empirical software engineering",
-      "Software performance and optimization, software architecture and requirements engineering",
-      "Applications of AI/ML in applied domains (e.g., healthcare, transports, finance, etc.)",
-      "Quantum computing, quantum information and communication"
+      "Automated software development tools; software integration and maintenance",
+      "Software testing, fault localization, and automated bug fixing",
+      "Empirical studies in software engineering",
+      "Software performance optimization; software architecture and requirements engineering",
+      "LLM-enhanced tools; applications of LLMs in software engineering",
+      "Applications of AI/ML in applied domains (e.g., healthcare, transportation, finance)",
+      "Quantum computing, quantum information, and communication"
     ],
     "skills": {
       "descriptions": "",
