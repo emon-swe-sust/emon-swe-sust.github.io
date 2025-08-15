@@ -529,6 +529,17 @@
   ],
   "researches": [
     {
+      "title": "Comparing Large Language Models for Human Accessible UI Generation",
+      "info": "Ongoing Research",
+      "doi": "",
+      "website": "",
+      "dataset": "",
+      "link": "",
+      "year": "May 2025 - Present",
+      "description": "This research explores the capability of large language models (LLMs) in generating user interfaces that align with Human-Computer Interaction (HCI) principles. It evaluates LLM generated UI components based on established accessibility and usability guidelines. The study uses both heuristic based and user centric evaluation metrics to compare model outputs, with the goal of understanding LLM effectiveness in producing interfaces that are more intuitive, inclusive, and user-friendly.",
+      "involvements": []
+    },
+    {
       "title": "Comparisons of Large Language Models for JavaScript Test Case Generation",
       "info": "Ongoing Research",
       "doi": "",
