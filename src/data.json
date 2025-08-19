@@ -529,6 +529,17 @@
   ],
   "researches": [
     {
+      "title": "Reviewer Recommendation using LLMs in Pull Requests",
+      "info": "Ongoing Research",
+      "doi": "",
+      "website": "",
+      "dataset": "",
+      "link": "",
+      "year": "May 2025 - Present",
+      "description": "This project investigates the use of large language models (LLMs) to suggest suitable reviewers for pull requests by analyzing historical interactions between developers and reviewers within a repository. The research leverages data from public open-source platforms, focusing on patterns in contributor-reviewer assignments, PR content, and code ownership. It includes mentoring two undergraduate students in designing the study, building datasets, crafting and refining LLM prompts, defining evaluation criteria, and validating results.",
+      "involvements": []
+    },
+    {
       "title": "Comparing Large Language Models for Human Accessible UI Generation",
       "info": "Ongoing Research",
       "doi": "",
@@ -548,17 +559,6 @@
       "link": "",
       "year": "April 2025 - Present",
       "description": "This study investigates the effectiveness of large language models (LLMs) in generating unit and end-to-end test cases for JavaScript code using Jest and Selenium. The research compares LLM performance under varying prompt contexts (code-only, contextual, and combined) and evaluates the generated tests using mutation testing, code coverage, and standard quality metrics. The project involves guiding two undergraduate students through idea development, dataset creation, prompt design, automation of evaluation pipelines, and manuscript preparation for peer-reviewed submission.",
-      "involvements": []
-    },
-    {
-      "title": "Evaluating LLM-Generated Commit Messages with Code and Issue Context",
-      "info": "Ongoing Research",
-      "doi": "",
-      "website": "",
-      "dataset": "",
-      "link": "",
-      "year": "May 2025 - Present",
-      "description": "This project studies how effectively large language models (LLMs) generate commit messages by combining information from code differences and related issue descriptions. The research uses curated data from open-source repositories and incorporates expert feedback for qualitative evaluation. It involves guiding two undergraduate students through research design and execution, dataset preparation, prompt experimentation, metric definition, and validation through industry collaboration.",
       "involvements": []
     },
     {
