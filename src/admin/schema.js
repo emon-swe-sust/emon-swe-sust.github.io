@@ -252,7 +252,7 @@ export const SECTIONS = [
         optional: true,
         blank: () => ({ file: "cv.pdf", downloadAs: "cv.pdf" }),
         fields: [
-          text("file", "File in public/", { help: "Replace public/cv.pdf to update the CV itself." }),
+          { key: "file", label: "CV file in public/", type: "pdf", help: "Upload your new CV PDF here: replace the current file, or save it under a new name." },
           text("downloadAs", "Download name"),
         ],
       },

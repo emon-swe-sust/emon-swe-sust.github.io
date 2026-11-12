@@ -51,3 +51,11 @@ export const uploadImage = (file, dir) =>
     headers: { "Content-Type": file.type || "application/octet-stream" },
     body: file,
   });
+
+/** Upload a PDF into public/. With replace, overwrites the existing file of that name (old copy is backed up). */
+export const uploadPdf = (file, name, replace = false) =>
+  request(`/upload?kind=pdf&name=${encodeURIComponent(safeFileName(name || file.name))}${replace ? "&replace=1" : ""}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/pdf" },
+    body: file,
+  });

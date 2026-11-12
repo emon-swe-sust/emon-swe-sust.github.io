@@ -20,6 +20,8 @@ fs.writeFileSync(path.join(tmp, "public", "projects", "demo", "1.png"), "x");
 fs.writeFileSync(path.join(tmp, "public", "index.html"), "<html>");
 fs.writeFileSync(path.join(tmp, "public", ".DS_Store"), "x");
 
+const BASE_PROJECTS = JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8")).projects.length;
+
 const app = express();
 mountAdminApi(app, { root: tmp });
 const server = app.listen(0, "127.0.0.1");
@@ -64,7 +66,7 @@ const ok = (name) => { passed++; console.log("  ✓", name); };
 
   let r = await call("GET", "/__admin/data");
   assert.strictEqual(r.status, 200);
-  assert.ok(r.json.rev && r.json.data.projects.length === 8);
+  assert.ok(r.json.rev && r.json.data.projects.length === BASE_PROJECTS);
   assert.deepStrictEqual(validate(r.json.data), []);
   ok("GET /data returns the data + a revision, and the real data validates");
   const rev0 = r.json.rev;
@@ -87,7 +89,7 @@ const ok = (name) => { passed++; console.log("  ✓", name); };
   assert.strictEqual(r.json.changed, true);
   const onDisk = JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8"));
   assert.strictEqual(onDisk.projects[0].title, "Smoke test project");
-  assert.strictEqual(onDisk.projects.length, 9);
+  assert.strictEqual(onDisk.projects.length, BASE_PROJECTS + 1);
   assert.strictEqual(onDisk.about.descriptions[0], "Edited — with “unicode” & <b>html</b>");
   const backups = fs.readdirSync(path.join(tmp, ".admin-backups"));
   assert.strictEqual(backups.length, 1);
@@ -113,7 +115,7 @@ const ok = (name) => { passed++; console.log("  ✓", name); };
   r = await put({ data: { nope: 1 }, baseRev: rev1 });
   assert.strictEqual(r.status, 422);
   ok("structurally broken data is rejected (422) and not written");
-  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8")).projects.length, 9);
+  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8")).projects.length, BASE_PROJECTS + 1);
 
   r = await call("PUT", "/__admin/data", { headers: { ...ADMIN }, body: "{not json" });
   assert.strictEqual(r.status, 400);
@@ -173,11 +175,30 @@ const ok = (name) => { passed++; console.log("  ✓", name); };
     }
   }
   ok("upload refuses traversal, non-image extensions, dotfiles; stays inside public/");
-  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8")).projects.length, 9, "data.json untouched by upload attempts");
+  assert.strictEqual(JSON.parse(fs.readFileSync(path.join(tmp, "src", "data.json"), "utf8")).projects.length, BASE_PROJECTS + 1, "data.json untouched by upload attempts");
 
   r = await call("POST", "/__admin/upload?dir=projects&name=big.png", { headers: { ...ADMIN }, body: Buffer.alloc(16 * 1024 * 1024) });
   assert.strictEqual(r.status, 413);
   ok("upload over 15 MB -> 413");
+
+  // --- PDF (CV) upload ----------------------------------------------------
+  const pdfUp = (name, body, replace) =>
+    call("POST", `/__admin/upload?kind=pdf&name=${name}${replace ? "&replace=1" : ""}`, { headers: { ...ADMIN, "Content-Type": "application/pdf" }, body });
+  fs.writeFileSync(path.join(tmp, "public", "cv.pdf"), "%PDF-old");
+  r = await pdfUp("cv.pdf", Buffer.from("%PDF-new"), false);
+  assert.strictEqual(r.status, 200);
+  assert.strictEqual(r.json.path, "cv-1.pdf");
+  assert.strictEqual(fs.readFileSync(path.join(tmp, "public", "cv.pdf"), "utf8"), "%PDF-old");
+  r = await pdfUp("cv.pdf", Buffer.from("%PDF-new"), true);
+  assert.strictEqual(r.status, 200);
+  assert.strictEqual(r.json.replaced, true);
+  assert.strictEqual(fs.readFileSync(path.join(tmp, "public", "cv.pdf"), "utf8"), "%PDF-new");
+  assert.ok(fs.readdirSync(path.join(tmp, ".admin-backups")).some((f) => f.endsWith("-cv.pdf")), "old CV backed up");
+  assert.strictEqual((await pdfUp("cv.pdf", Buffer.from("not a pdf"), true)).status, 415);
+  assert.strictEqual((await pdfUp("nope.pdf", Buffer.from("%PDF-x"), true)).status, 404);
+  assert.strictEqual((await pdfUp("cv.png", Buffer.from("%PDF-x"), false)).status, 400);
+  assert.strictEqual((await pdfUp("..%2Fevil.pdf", Buffer.from("%PDF-x"), false)).status, 400);
+  ok("PDF upload: new name, replace with backup, rejects non-PDF/missing/bad names");
 
   // --- backup pruning -----------------------------------------------------
   let rev = rev1;
@@ -190,7 +211,7 @@ const ok = (name) => { passed++; console.log("  ✓", name); };
     rev = r.json.rev;
     await new Promise((res) => setTimeout(res, 2)); // distinct timestamps
   }
-  assert.strictEqual(fs.readdirSync(path.join(tmp, ".admin-backups")).length, 20);
+  assert.strictEqual(fs.readdirSync(path.join(tmp, ".admin-backups")).filter((f) => f.startsWith("data-")).length, 20);
   ok("backups are pruned to the newest 20");
 
   console.log(`\nAll ${passed} checks passed.`);

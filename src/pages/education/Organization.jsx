@@ -39,6 +39,8 @@ function Organization() {
           <Entity
             key={idx}
             logo={first["logo-light"]}
+            logoDark={first["logo-dark"]}
+            logoBox={first["logo-box"]}
             name={first.title}
             href={first.title_link}
           >

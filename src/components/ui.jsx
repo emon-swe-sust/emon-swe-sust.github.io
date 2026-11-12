@@ -221,29 +221,62 @@ export const MetaItem = ({ icon, children }) => (
 
 /* ------------------------------------------------------- logo + entity block */
 
+// The logo is shown as the raw image, with no box behind it. A logo with a
+// separate dark version swaps to it in dark mode.
 const LogoTile = styled.div`
   flex: none;
-  width: ${(p) => p.$size || 64}px;
-  height: ${(p) => p.$size || 64}px;
-  display: grid;
-  place-items: center;
-  padding: 8px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  @media (max-width: 959px) {
+    max-width: 150px;
+  }
   img {
+    display: block;
+    height: ${(p) => (p.$size || 64) - 8}px;
+    width: auto;
     max-width: 100%;
-    max-height: 100%;
     object-fit: contain;
+  }
+  .for-dark {
+    display: none;
+  }
+  /* "logo-box": true in data.json keeps a white background behind the logo in
+     dark mode, for logos whose artwork is dark or has its own solid background. */
+  html[data-mode="dark"] &.boxed {
+    padding: 6px;
+    border-radius: 12px;
+    background: #fff;
+  }
+  html[data-mode="dark"] &.boxed img {
+    height: ${(p) => (p.$size || 64) - 20}px;
+  }
+  html[data-mode="dark"] &.split .for-light {
+    display: none;
+  }
+  html[data-mode="dark"] &.split .for-dark {
+    display: block;
   }
 `;
 
-export const Logo = ({ src, alt = "", size }) =>
-  src ? (
-    <LogoTile $size={size}>
-      <img src={asset(src)} alt={alt} loading="lazy" />
+const hideTile = (e) => {
+  // A logo file that is missing should leave no empty frame behind.
+  e.currentTarget.parentNode.style.display = "none";
+};
+
+// `srcDark` is optional. When it differs from `src`, the dark version is shown
+// in dark mode, on the page background instead of a white box.
+export const Logo = ({ src, srcDark, boxed, alt = "", size }) => {
+  const split = !boxed && !!srcDark && srcDark !== src;
+  return src ? (
+    <LogoTile $size={size} className={boxed ? "boxed" : split ? "split" : ""}>
+      <img className="for-light" src={asset(src)} alt={alt} loading="lazy" onError={hideTile} />
+      {split && (
+        <img className="for-dark" src={asset(srcDark)} alt={alt} loading="lazy" />
+      )}
     </LogoTile>
   ) : null;
+};
 
 const EntityEl = styled.article`
   display: grid;
@@ -287,10 +320,10 @@ const EntityHead = styled.div`
 `;
 
 // An organisation / school on the left, what happened there on the right.
-export const Entity = ({ logo, name, href, meta, children }) => (
+export const Entity = ({ logo, logoDark, logoBox, name, href, meta, children }) => (
   <EntityEl>
     <EntityRail>
-      <Logo src={logo} alt="" />
+      <Logo src={logo} srcDark={logoDark} boxed={logoBox} alt="" />
       <EntityHead>
         <EntityName>
           {isUrl(href) ? <ExtLink href={href}>{name}</ExtLink> : name}

@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   Box, Button, Checkbox, Flex, FormControl, FormHelperText, FormLabel, HStack, IconButton, Image, Input,
-  Select, Stack, Switch, Tag, TagLabel, Text, Textarea, Tooltip, Wrap, WrapItem, useDisclosure,
+  Select, Stack, Switch, Tag, TagLabel, Text, Textarea, Tooltip, Wrap, WrapItem, useDisclosure, useToast,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown, faArrowUp, faChevronLeft, faChevronRight, faImage, faPlus, faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import ImagePicker from "./ImagePicker";
+import { uploadPdf } from "./api";
 import { moveItem, setField } from "./schema";
 import { MONTHS, formatRange, parseRange } from "./dates";
 
@@ -224,6 +225,51 @@ function ImageField({ field, value, onChange, item }) {
   );
 }
 
+
+/** A path to a PDF in public/ (the CV): type it, or upload a PDF to replace the current file or add a new one. */
+function PdfField({ field, value, onChange }) {
+  const input = useRef(null);
+  const toast = useToast();
+  const [replace, setReplace] = useState(true);
+  const [busy, setBusy] = useState(false);
+  const current = (value || "").replace(/^\/+/, "");
+  const canReplace = /^[A-Za-z0-9][A-Za-z0-9._-]*\.pdf$/i.test(current);
+
+  const handle = async (event) => {
+    const file = event.target.files && event.target.files[0];
+    event.target.value = "";
+    if (!file) return;
+    setBusy(true);
+    try {
+      const doReplace = replace && canReplace;
+      const res = await uploadPdf(file, doReplace ? current : file.name, doReplace);
+      onChange(res.path);
+      toast({
+        title: res.replaced ? `Replaced public/${res.path}` : `Saved as public/${res.path}`,
+        description: res.replaced ? "The previous copy is in .admin-backups/." : undefined,
+        status: "success", duration: 5000,
+      });
+    } catch (e) {
+      toast({ title: "Upload failed", description: e.message, status: "error", duration: 8000, isClosable: true });
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <SingleShell field={field}>
+      <Flex gap={3} align="center" wrap="wrap">
+        <Input size="sm" flex="1" minW="180px" value={value ?? ""} onChange={(e) => onChange(e.target.value)} />
+        <input ref={input} type="file" accept="application/pdf,.pdf" hidden data-testid="pdf-file-input" onChange={handle} />
+        <Button size="sm" flexShrink={0} isLoading={busy} onClick={() => input.current.click()}>Upload PDF…</Button>
+      </Flex>
+      <Checkbox mt={2} size="sm" isChecked={replace && canReplace} isDisabled={!canReplace} onChange={(e) => setReplace(e.target.checked)}>
+        Replace the existing {canReplace ? `public/${current}` : "file"} (old copy is backed up); untick to save as a new file
+      </Checkbox>
+    </SingleShell>
+  );
+}
+
 // -------------------------------------------------------------------- lists --
 
 /** Focus the newest row after "Add", so you can type straight away. */
@@ -414,6 +460,8 @@ export function Field({ field, value, onChange, item }) {
       return <LongTextField field={field} value={value} onChange={onChange} />;
     case "bool":
       return <BoolField field={field} value={value} onChange={onChange} />;
+    case "pdf":
+      return <PdfField field={field} value={value} onChange={onChange} />;
     case "image":
       return <ImageField field={field} value={value} onChange={onChange} item={item} />;
     case "strings":

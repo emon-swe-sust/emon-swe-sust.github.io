@@ -1,8 +1,8 @@
-// Personal details that appear outside src/data.json (hero, footer, navigation).
+// Personal details (hero, footer, navigation). The admin edits them via src/data.json "profile".
 // Keeping them in one place makes them easy to change later.
-import scholar from "./scholar.json";
+import data from "./data.json";
 
-const profile = {
+const defaults = {
   name: "Mahfuzur Rahman Emon",
   firstNames: "Mahfuzur Rahman",
   lastName: "Emon",
@@ -12,19 +12,11 @@ const profile = {
   location: "Calgary, Alberta, Canada",
   leave: "On leave from SUST, where I am a Lecturer at IICT",
   photo: "emon_dp.jpeg",
+  photoHover: "auto", // auto | bw | to-bw | none
+  photoStyle: "frame", // frame | border | soft | plain
   email: "emon-iict@sust.edu",
   phone: "+8801521702334",
   cv: { file: "cv.pdf", downloadAs: "emon_cv.pdf" },
-  // Numbers shown in the bar under the hero buttons. Publications and
-  // citations come from src/scholar.json, which a daily job refreshes from
-  // Google Scholar (see .github/workflows/scholar.yml). The other two are
-  // typed here. Give an item an `href` to make it a link.
-  stats: [
-    { value: String(scholar.publications), label: "Publications", href: "https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en" },
-    { value: String(scholar.citations), label: "Citations", href: "https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en" },
-    { value: "1", label: "Research award" },
-    { value: "4", label: "Ongoing research" },
-  ],
   links: {
     lasso: "https://lasso-lab.com/team/mahfuzur-emon",
     sust: "https://www.sust.edu/institutes/iict/faculty/emon-iict@sust.edu",
@@ -32,6 +24,15 @@ const profile = {
     linkedin: "https://www.linkedin.com/in/emon-swe-sust/",
     github: "https://github.com/emon-swe-sust",
   },
+};
+
+// Editable in the admin (Profile section); anything missing falls back to the defaults above.
+const saved = data.profile || {};
+const profile = {
+  ...defaults,
+  ...saved,
+  cv: { ...defaults.cv, ...(saved.cv || {}) },
+  links: { ...defaults.links, ...(saved.links || {}) },
 };
 
 export default profile;

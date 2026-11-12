@@ -89,6 +89,8 @@ function Degree({ degree }) {
   return (
     <Entity
       logo={degree["logo-light"]}
+      logoDark={degree["logo-dark"]}
+      logoBox={degree["logo-box"]}
       name={degree.title}
       href={degree.title_link}
       meta={

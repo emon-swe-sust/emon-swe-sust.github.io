@@ -288,6 +288,35 @@ function heicToJpeg(buffer) {
   }
 }
 
+
+/**
+ * PDF upload (e.g. the CV) into the top level of public/. Either saves under a
+ * new, non-clashing name or, with replace=1, overwrites an existing PDF after
+ * copying the old one into .admin-backups/.
+ */
+async function uploadPdfImpl(req, query, { publicDir, backupDir }) {
+  const name = String(query.get("name") || "");
+  if (!SAFE_SEGMENT.test(name) || path.extname(name).toLowerCase() !== ".pdf") {
+    throw new HttpError(400, "File name must be a .pdf using letters, numbers, '.', '_' and '-'.");
+  }
+  const body = await readBody(req, MAX_UPLOAD_BYTES);
+  if (!body.length) throw new HttpError(400, "Empty upload.");
+  if (body.slice(0, 5).toString("latin1") !== "%PDF-") throw new HttpError(415, "That file is not a PDF.");
+
+  if (query.get("replace") === "1") {
+    const target = path.join(publicDir, name);
+    if (!fs.existsSync(target)) throw new HttpError(404, `public/${name} does not exist, so there is nothing to replace.`);
+    fs.mkdirSync(backupDir, { recursive: true });
+    fs.copyFileSync(target, path.join(backupDir, `${new Date().toISOString().replace(/[:.]/g, "-")}-${name}`));
+    const tmp = `${target}.tmp-${process.pid}`;
+    fs.writeFileSync(tmp, body);
+    fs.renameSync(tmp, target);
+    return { path: name, replaced: true };
+  }
+  const file = writeUnique(publicDir, name.slice(0, -4), ".pdf", body);
+  return { path: path.basename(file), replaced: false };
+}
+
 function writeUnique(dir, base, ext, buffer) {
   fs.mkdirSync(dir, { recursive: true });
   for (let n = 0; n < 1000; n++) {
@@ -366,6 +395,7 @@ function createHandlers({ root }) {
     },
 
     async upload(req, query) {
+      if (query.get("kind") === "pdf") return uploadPdfImpl(req, query, { publicDir, backupDir });
       const target = safeUploadTarget(publicDir, query.get("dir"), query.get("name"));
       const body = await readBody(req, MAX_UPLOAD_BYTES);
       if (!body.length) throw new HttpError(400, "Empty upload.");

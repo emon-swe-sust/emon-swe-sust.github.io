@@ -1,4 +1,30 @@
 {
+  "profile": {
+    "name": "Mahfuzur Rahman Emon",
+    "firstNames": "Mahfuzur Rahman",
+    "lastName": "Emon",
+    "brand": "m.r.e.",
+    "role": "M.Sc. Student, LASSO Lab",
+    "institution": "University of Calgary",
+    "location": "Calgary, Alberta, Canada",
+    "leave": "On leave from SUST, where I am a Lecturer at IICT",
+    "photo": "/IMG_1079.jpg",
+    "email": "emon-iict@sust.edu",
+    "phone": "+8801521702334",
+    "links": {
+      "lasso": "https://lasso-lab.com/team/mahfuzur-emon",
+      "sust": "https://www.sust.edu/institutes/iict/faculty/emon-iict@sust.edu",
+      "scholar": "https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en",
+      "linkedin": "https://www.linkedin.com/in/emon-swe-sust/",
+      "github": "https://github.com/emon-swe-sust"
+    },
+    "photoStyle": "soft",
+    "photoHover": "auto",
+    "cv": {
+      "file": "cv.pdf",
+      "downloadAs": "cv.pdf"
+    }
+  },
   "about": {
     "descriptions": [
       "Hello, I am an M.Sc. student at the University of Calgary, Canada, doing a thesis-based degree in the LASSO Lab (Learning & Analytics for Software System Operations).",
@@ -7,11 +33,11 @@
       "My main research focus is on smoothing the way software gets built and shipped: software build systems, CI/CD pipelines, and software release. I am also interested in empirical software engineering and in how LLMs can support developer tools."
     ],
     "researchInterest": [
+      "CI/CD pipelines and DevOps practices; automating how code is built, tested and shipped",
       "Software build systems; making builds faster, more reliable and easier to maintain",
-      "CI/CD pipelines and DevOps practices",
-      "Software release engineering",
-      "Empirical studies in software engineering",
-      "Software testing, fault localization, and automated bug fixing",
+      "Software release engineering; getting changes to users reliably and on schedule",
+      "Empirical studies in software engineering; learning from real projects and data what works in practice",
+      "Software testing; fault localization and automated bug fixing",
       "LLM-enhanced tools; applications of LLMs in software engineering",
       "Automated software development tools; software integration and maintenance"
     ],
@@ -82,6 +108,7 @@
           "title_link": "https://www.facebook.com/sustacmsc",
           "logo-light": "/organizations/acm.png",
           "logo-dark": "/organizations/acm.png",
+          "logo-box": true,
           "year": "Dec 2021 - Jan 2023",
           "titleSecond": "Mentor (Corporate Team)"
         },
@@ -90,6 +117,7 @@
           "title_link": "https://www.facebook.com/sustacmsc",
           "logo-light": "/organizations/acm.png",
           "logo-dark": "/organizations/acm.png",
+          "logo-box": true,
           "year": "Feb 2020 - Nov 2021",
           "titleSecond": "Assistant Organizing Secretary"
         },
@@ -98,6 +126,7 @@
           "title_link": "https://www.facebook.com/bengaliAI",
           "logo-light": "/organizations/ba.jpeg",
           "logo-dark": "/organizations/ba.jpeg",
+          "logo-box": true,
           "year": "Oct 2021 - Feb 2023",
           "titleSecond": "Research Assistant"
         },
@@ -106,6 +135,7 @@
           "title_link": "https://www.facebook.com/profile.php?id=100063963033631",
           "logo-light": "/organizations/tarunno.jpeg",
           "logo-dark": "/organizations/tarunno.jpeg",
+          "logo-box": true,
           "year": "July 2019 - May 2020",
           "titleSecond": "Secretary of Science and Technology"
         }
@@ -116,6 +146,8 @@
     {
       "title": "University of Calgary",
       "title_link": "https://www.ucalgary.ca/",
+      "logo-light": "/organizations/ucalgary-logo.png",
+      "logo-dark": "/organizations/ucalgary-logo-dark.png",
       "year": "In progress",
       "titleSecond": "M.Sc. (thesis-based), LASSO Lab",
       "description": "Thesis research on smoothing software build systems, CI/CD and software release, in the LASSO Lab (Learning & Analytics for Software System Operations).",
@@ -127,6 +159,7 @@
       "title_link": "http://sust.edu/",
       "logo-light": "sust-logo.png",
       "logo-dark": "sust-logo.png",
+      "logo-box": true,
       "cgpa": "3.89/4.00 [2nd/50]",
       "year": "2018-2022",
       "titleSecond": "B.Sc. in Software Engineering",
@@ -162,6 +195,7 @@
       "title_link": "https://abdurroufcollege.ac.bd/",
       "logo-light": "BMARPC.png",
       "logo-dark": "BMARPC.png",
+      "logo-box": true,
       "gpa": "5.00/5.00",
       "year": "2016-2018",
       "titleSecond": "Higher Secondary Certificate",
@@ -185,6 +219,7 @@
       "title_link": "https://en.wikipedia.org/wiki/Brahmondi_Kamini_Kishore_Moulik_Government_High_School",
       "logo-light": "KKM.png",
       "logo-dark": "KKM.png",
+      "logo-box": true,
       "gpa": "5.00/5.00",
       "year": "2005-2015",
       "titleSecond": "Secondary School Certificate",
@@ -208,12 +243,27 @@
     {
       "title": "University of Calgary",
       "title_link": "https://www.ucalgary.ca/",
+      "logo-light": "/organizations/ucalgary-logo.png",
+      "logo-dark": "/organizations/ucalgary-logo-dark.png",
       "year": "Present",
-      "titleSecond": "M.Sc. Student, LASSO Lab",
+      "titleSecond": "Graduate Research Assistant, LASSO Lab",
       "technologies": [],
       "involvements": [
-        "Thesis research on smoothing software build systems, CI/CD pipelines and software release.",
-        "Member of the <a href=\"https://lasso-lab.com/team/mahfuzur-emon\">LASSO Lab</a> (Learning & Analytics for Software System Operations)."
+        "Research assistant in the <a href=\"https://lasso-lab.com/team/mahfuzur-emon\">LASSO Lab</a> (Learning & Analytics for Software System Operations), working on my thesis on smoothing software build systems, CI/CD pipelines and software release."
+      ],
+      "location": "Calgary, Alberta, Canada",
+      "location_link": "https://maps.google.com/?q=University+of+Calgary"
+    },
+    {
+      "title": "University of Calgary",
+      "title_link": "https://www.ucalgary.ca/",
+      "logo-light": "/organizations/ucalgary-logo.png",
+      "logo-dark": "/organizations/ucalgary-logo-dark.png",
+      "year": "Present",
+      "titleSecond": "Teaching Assistant",
+      "technologies": [],
+      "involvements": [
+        "Teaching assistant at the University of Calgary, supporting course instruction, labs and student questions."
       ],
       "location": "Calgary, Alberta, Canada",
       "location_link": "https://maps.google.com/?q=University+of+Calgary"
@@ -223,6 +273,7 @@
       "title_link": "https://www.sust.edu",
       "logo-light": "sust-logo.png",
       "logo-dark": "sust-logo.png",
+      "logo-box": true,
       "year": "Nov 2023 - Present (on leave)",
       "titleSecond": "Lecturer - Software Engineering, IICT",
       "technologies": [],
@@ -510,35 +561,6 @@
       ]
     },
     {
-      "title": "Portfolio",
-      "title_link": "portfolio",
-      "pictures": [
-        "/projects/portfolio/1.png",
-        "/projects/portfolio/2.png",
-        "/projects/portfolio/3.png",
-        "/projects/portfolio/4.png",
-        "/projects/portfolio/5.png",
-        "/projects/portfolio/6.png"
-      ],
-      "year": "May 2023",
-      "github_link": "https://github.com/emon-swe-sust/portfolio",
-      "titleSecond": "A detailed portfolio to introduce myself.",
-      "association_with": "Personal",
-      "technologies": [
-        "Javascript",
-        "ReactJS"
-      ],
-      "features": [
-        "Introduction on landing page of portfolio to have a full overview.",
-        "Detailed overview of my experience and my activity on Experience page.",
-        "Project page to mention some of my major project with detailed description.",
-        "Educational background page to get to know about my educational background."
-      ],
-      "involvements": [
-        "My interest led me to develop this portfolio on my own."
-      ]
-    },
-    {
       "title": "FileHub",
       "title_link": "https://github.com/emon-swe-sust/FileHub/releases/tag/1.2",
       "pictures": [
@@ -597,80 +619,26 @@
   ],
   "researches": [
     {
-      "title": "Smoothing Software Builds, CI/CD and Releases (M.Sc. thesis)",
-      "info": "Ongoing Research",
-      "doi": "",
-      "website": "https://lasso-lab.com/team/mahfuzur-emon",
-      "dataset": "",
-      "link": "",
-      "year": "Present",
-      "description": "My M.Sc. thesis at the University of Calgary, in the LASSO Lab, focuses on making software build systems, CI/CD pipelines and software release smoother.",
-      "involvements": []
-    },
-    {
-      "title": "Reviewer Recommendation using LLMs in Pull Requests",
-      "info": "Ongoing Research",
-      "doi": "",
+      "title": "Early Task Failure Prediction in Cloud Computing Using Machine Learning and Feature Analytics",
+      "info": "SUST Journal of Science and Technology (SUST JST)",
+      "doi": "https://doi.org/10.63512/sustjst.2024.2003",
       "website": "",
       "dataset": "",
-      "link": "",
-      "year": "May 2025 - Present",
-      "description": "This project investigates the use of large language models (LLMs) to suggest suitable reviewers for pull requests by analyzing historical interactions between developers and reviewers within a repository. The research leverages data from public open-source platforms, focusing on patterns in contributor-reviewer assignments, PR content, and code ownership. It includes mentoring two undergraduate students in designing the study, building datasets, crafting and refining LLM prompts, defining evaluation criteria, and validating results.",
-      "involvements": []
-    },
-    {
-      "title": "Comparing Large Language Models for Human Accessible UI Generation",
-      "info": "Ongoing Research",
-      "doi": "",
-      "website": "",
-      "dataset": "",
-      "link": "",
-      "year": "May 2025 - Present",
-      "description": "This research explores the capability of large language models (LLMs) in generating user interfaces that align with Human-Computer Interaction (HCI) principles. It evaluates LLM generated UI components based on established accessibility and usability guidelines. The study uses both heuristic based and user centric evaluation metrics to compare model outputs, with the goal of understanding LLM effectiveness in producing interfaces that are more intuitive, inclusive, and user-friendly.",
-      "involvements": []
-    },
-    {
-      "title": "Comparisons of Large Language Models for JavaScript Test Case Generation",
-      "info": "Ongoing Research",
-      "doi": "",
-      "website": "",
-      "dataset": "",
-      "link": "",
-      "year": "April 2025 - Present",
-      "description": "This study investigates the effectiveness of large language models (LLMs) in generating unit and end-to-end test cases for JavaScript code using Jest and Selenium. The research compares LLM performance under varying prompt contexts (code-only, contextual, and combined) and evaluates the generated tests using mutation testing, code coverage, and standard quality metrics. The project involves guiding two undergraduate students through idea development, dataset creation, prompt design, automation of evaluation pipelines, and manuscript preparation for peer-reviewed submission.",
-      "involvements": []
-    },
-    {
-      "title": "Early Detection of Task Failures in Cloud Environments via Machine Learning and Feature Analytics",
-      "info": "Submitted for review",
-      "doi": "",
-      "website": "",
-      "dataset": "",
-      "link": "",
-      "year": "Jan 2025 - Jul 2025",
+      "link": "https://doi.org/10.63512/sustjst.2024.2003",
+      "year": "May 2026",
       "description": "This study proposes a machine learning framework to predict task failures at submission time in cloud computing using the 2019 Google Borg Cluster dataset. It includes data preprocessing, multi-model evaluation, and analytical insights to enhance cloud scheduling systems.",
-      "involvements": [
-        "Supervised two undergraduate students in idea development and problem formulation.",
-        "Advised on literature review and research direction.",
-        "Provided guidance on methodology and modeling approaches.",
-        "Contributed to analysis, interpretation, and preparation of the manuscript for journal submission."
-      ]
+      "involvements": []
     },
     {
       "title": "BaDLAD: A Large Multi-Domain Bengali Document Layout Analysis Dataset",
-      "info": "Published in the International Conference on Document Analysis and Recognition (ICDAR) pages 326-341, August 2023.",
+      "info": "International Conference on Document Analysis and Recognition (ICDAR)",
       "doi": "https://link.springer.com/chapter/10.1007/978-3-031-41676-7_19",
       "website": "https://bengaliai.github.io/badlad",
       "dataset": "https://www.kaggle.com/datasets/reasat/badlad-train",
-      "link": "https://arxiv.org/abs/2303.05325",
-      "year": "Oct 2021 - Jan 2023",
+      "link": "https://dl.acm.org/doi/10.1007/978-3-031-41676-7_19",
+      "year": "Aug 2023",
       "description": "BaDLAD is the first large Bengali Document Layout Analysis Dataset containing 33,695 annotated samples from six domains. This dataset can help develop deep learning-based models for OCR and document transcription in Bengali language. Preliminary experiments show the efficacy of BaDLAD in training these models.",
-      "involvements": [
-        "Managed a team of 13 annotators to create BaDLAD, the most extensive multi-domain Bengali Document Layout Analysis Dataset, featuring 33,700 document images and over 710,000 polygon-based annotations.",
-        "Standardized annotation exports, conducted in-depth data analysis and visualizations, and optimized the dataset for machine learning compatibility and validation workflows.",
-        "Co-authored a publication introducing BaDLAD, which was used to train deep learning models for Bengali document digitization and layout understanding.",
-        "Developed a Bengali lemmatizer and assembled the largest known dataset of Bengali verb forms, systematically organized by grammatical categories and tense."
-      ]
+      "involvements": []
     }
   ]
 }

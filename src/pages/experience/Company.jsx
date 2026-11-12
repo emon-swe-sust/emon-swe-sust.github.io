@@ -30,6 +30,8 @@ function Company({ roles }) {
   return (
     <Entity
       logo={first["logo-light"]}
+      logoDark={first["logo-dark"]}
+      logoBox={first["logo-box"]}
       name={first.title}
       href={first.title_link}
       meta={sharedPlace ? <Place job={first} /> : null}

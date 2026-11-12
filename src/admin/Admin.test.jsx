@@ -225,3 +225,24 @@ test("raw JSON: invalid text is rejected, valid text updates the draft", async (
   expect(await screen.findByRole("alert")).toBeInTheDocument();
   expect(screen.getByTestId("save-state")).toHaveTextContent("All changes saved");
 });
+
+test("CV: uploading a PDF replaces the current file by default, or saves a new one when unticked", async () => {
+  const user = userEvent;
+  api.uploadPdf.mockResolvedValueOnce({ path: "cv.pdf", replaced: true });
+  api.uploadPdf.mockResolvedValueOnce({ path: "cv-1.pdf", replaced: false });
+  renderAdmin("/admin/profile");
+  const input = await screen.findByTestId("pdf-file-input");
+  const file = new File(["%PDF-1"], "My CV.pdf", { type: "application/pdf" });
+
+  await user.upload(input, file);
+  await waitFor(() => expect(api.uploadPdf).toHaveBeenCalledTimes(1));
+  expect(api.uploadPdf.mock.calls[0][1]).toBe("cv.pdf");
+  expect(api.uploadPdf.mock.calls[0][2]).toBe(true);
+
+  await user.click(screen.getByRole("checkbox", { name: /replace the existing/i }));
+  fireEvent.change(screen.getByTestId("pdf-file-input"), { target: { files: [file] } });
+  await waitFor(() => expect(api.uploadPdf).toHaveBeenCalledTimes(2));
+  expect(api.uploadPdf.mock.calls[1][1]).toBe("My CV.pdf");
+  expect(api.uploadPdf.mock.calls[1][2]).toBe(false);
+  expect(await screen.findByDisplayValue("cv-1.pdf")).toBeInTheDocument();
+});
