@@ -9,7 +9,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ChakraProvider>
+    {/* Chakra is only used for its Spinner / toast; the site has its own styles. */}
+    <ChakraProvider resetCSS={false}>
       <Theme>
         <App />
       </Theme>

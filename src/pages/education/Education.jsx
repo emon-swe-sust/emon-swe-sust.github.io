@@ -1,24 +1,24 @@
-import React, { useContext } from "react";
-import { BodyContainer } from "../../App";
-import { ThemeContext } from "../../components/context/Theme";
+import React from "react";
 import data from "../../data.json";
-import { SectionContainer } from "../../components/utils";
 import Degree from "./Degree";
-import Title from "../../components/Title";
 import Organization from "./Organization";
+import NextPage from "../../components/NextPage";
+import { Page, PageTitle, Shell } from "../../components/ui";
 
 function Education() {
-  const { theme } = useContext(ThemeContext);
   return (
-    <BodyContainer theme={theme}>
-      <Title>Educational background</Title>
-      <SectionContainer>
+    <Page tone="edu">
+      <Shell>
+        <PageTitle>Education</PageTitle>
         {data.education.map((degree, idx) => (
           <Degree degree={degree} key={idx} />
         ))}
-      </SectionContainer>
-      <Organization />
-    </BodyContainer>
+        <Organization />
+      </Shell>
+      <NextPage to="/about" tone="research" label="Back to the start">
+        Profile
+      </NextPage>
+    </Page>
   );
 }
 

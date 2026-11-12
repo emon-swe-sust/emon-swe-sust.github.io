@@ -1,179 +1,201 @@
-import { SectionContainer, SubTitle2 } from "../../components/utils";
-import data from "./../../data.json";
-import Title from "../../components/Title";
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../../components/context/Theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCalendarDays,
-  faCode,
+  faArrowUpRightFromSquare,
   faDatabase,
   faGlobe,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
-import { DateLocationContainer } from "../../components/SectionTop";
-import { StyledLink } from "../education/Degree";
+import data from "../../data.json";
 import BulletPoints from "../../components/BulletPoints";
+import { ExtLink } from "../../components/ui";
+import { isUrl, tidyRange } from "../../components/format";
 
-const P = styled.p`
-  font-size: 14px;
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-`;
-
-const ResearchInfo = styled.div`
-  font-size: small;
-`;
-
-const ResearchContainer = styled(SectionContainer)`
-  gap: 8px;
-`;
-
-const Flex = styled.div`
-  display: flex;
-  justify-content: ${(props) => props.justify && props.justify};
-  align-items: center;
-  font-size: small;
-  gap: 8px;
-  @media (max-width: 768px) {
-    font-size: x-small;
-  }
-`;
-
-const IndividualResearchContainer = styled.div`
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid ${(props) => props.theme.colors.border};
-  background-color: ${(props) => props.theme.colors.bgCard};
-  width: 100%;
+const List = styled.ol`
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 `;
 
-const SubTitleSecond = styled.div`
-  font-size: large;
-  color: ${(props) => props.theme.colors.titleSecondary};
-  font-weight: 300;
-  gap: 4px;
-  align-items: center;
-  font-family: "Patua One", cursive;
-  @media (max-width: 768px) {
-    font-size: medium;
-  }
-  width: fit-content;
-  padding-right: 64px;
-`;
-
-const ItemContainer = styled.div`
+const Item = styled.li`
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+  &:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
 `;
 
-const IndividualResearch = ({ research }) => {
-  const { theme } = useContext(ThemeContext);
-  return (
-    <IndividualResearchContainer theme={theme}>
-      <SubTitleSecond theme={theme}>
-        {research.link ? (
-          <StyledLink
-            to={research.link}
-            target="_blank"
-            border_bottom={"1px solid"}
-          >
-            {research.title}
-            <FontAwesomeIcon
-              icon={faLink}
-              size="2xs"
-              style={{ marginLeft: "2px" }}
-            />
-          </StyledLink>
-        ) : (
-          <React.Fragment>{research.title}</React.Fragment>
-        )}
-      </SubTitleSecond>
-      {research.info && <ResearchInfo>{research.info}</ResearchInfo>}
-      <DateLocationContainer>
-        {research.year && (
-          <Flex>
-            <FontAwesomeIcon
-              icon={faCalendarDays}
-              style={{ color: theme.colors.titleSecondary }}
-            />
-            {research.year}
-          </Flex>
-        )}
-        {research.doi && (
-          <StyledLink
-            to={research.doi}
-            target="_blank"
-            border_bottom={"1px solid"}
-            fontSize={"small"}
-            style={{ display: "flex", alignItems: "center", fontSize: "small" }}
-          >
-            <FontAwesomeIcon
-              icon={faCode}
-              size="x"
-              style={{ margin: "0 4px", color: theme.colors.titleSecondary }}
-            />
-            DOI
-          </StyledLink>
-        )}
+const TopRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--muted);
+`;
 
-        {research.website && (
-          <StyledLink
-            to={research.website}
-            target="_blank"
-            border_bottom={"1px solid"}
-            fontSize={"small"}
-            style={{ display: "flex", alignItems: "center", fontSize: "small" }}
-          >
-            <FontAwesomeIcon
-              icon={faGlobe}
-              size="x"
-              style={{ margin: "0 4px", color: theme.colors.titleSecondary }}
-            />
-            Website
-          </StyledLink>
-        )}
-        {research.dataset && (
-          <StyledLink
-            to={research.dataset}
-            target="_blank"
-            border_bottom={"1px solid"}
-            fontSize={"small"}
-            style={{ display: "flex", alignItems: "center", fontSize: "small" }}
-          >
-            <FontAwesomeIcon
-              icon={faDatabase}
-              size="x"
-              style={{ margin: "0 4px", color: theme.colors.titleSecondary }}
-            />
-            DataSet
-          </StyledLink>
-        )}
-      </DateLocationContainer>
-      {research.description && <P>{research.description}</P>}
-      <ItemContainer>
-        <BulletPoints bulletPoints={research.involvements} gap={"8px"} />
-      </ItemContainer>
-    </IndividualResearchContainer>
-  );
+const Status = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  line-height: 1;
+
+  &::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: ${(p) => p.$color};
+  }
+`;
+
+const Title = styled.h3`
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  max-width: 40ch;
+
+  a svg {
+    margin-left: 0.45em;
+    font-size: 0.6em;
+    vertical-align: 0.18em;
+    color: var(--accent-ink);
+  }
+  a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+  }
+`;
+
+const Venue = styled.p`
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  max-width: 62ch;
+`;
+
+const Description = styled.p`
+  max-width: 68ch;
+  color: var(--ink-2);
+`;
+
+const Links = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+const Pill = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1;
+  color: var(--accent-ink);
+  background: var(--surface-2);
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface));
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+  transition: border-color 0.15s ease;
+  &:hover {
+    border-color: var(--accent);
+  }
+`;
+
+const Contribution = styled.div`
+  padding-left: 18px;
+  border-left: 2px solid var(--line-strong);
+  max-width: 68ch;
+`;
+
+// The status is derived from the free-text "info" field in data.json.
+const statusOf = (info = "") => {
+  if (/^published/i.test(info))
+    return { label: "Published", color: "var(--c-career)", venue: info };
+  if (/submitted/i.test(info))
+    return { label: "Under review", color: "var(--c-project)" };
+  if (/ongoing/i.test(info)) return { label: "Ongoing", color: "var(--c-research)" };
+  return info ? { label: info, color: "var(--c-edu)" } : null;
 };
 
 function Research() {
   return (
-    <div style={{ marginTop: "32px" }}>
-      <Title>Research Involvements</Title>
-      <ResearchContainer>
-        {data.researches.map((project, idx) => (
-          <IndividualResearch key={idx} research={project} />
-        ))}
-      </ResearchContainer>
-    </div>
+    <List>
+      {data.researches.map((research, idx) => {
+        const status = statusOf(research.info);
+        return (
+          <Item key={idx}>
+            <TopRow>
+              {status && <Status $color={status.color}>{status.label}</Status>}
+              {research.year && <span>{tidyRange(research.year)}</span>}
+            </TopRow>
+
+            <Title>
+              {isUrl(research.link) ? (
+                <ExtLink href={research.link}>
+                  {research.title}
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </ExtLink>
+              ) : (
+                research.title
+              )}
+            </Title>
+
+            {status && status.venue && <Venue>{status.venue}</Venue>}
+            {research.description && <Description>{research.description}</Description>}
+
+            {(isUrl(research.doi) || isUrl(research.website) || isUrl(research.dataset)) && (
+              <Links>
+                {isUrl(research.doi) && (
+                  <Pill href={research.doi} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faLink} /> DOI
+                  </Pill>
+                )}
+                {isUrl(research.website) && (
+                  <Pill href={research.website} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGlobe} /> Website
+                  </Pill>
+                )}
+                {isUrl(research.dataset) && (
+                  <Pill href={research.dataset} target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faDatabase} /> Dataset
+                  </Pill>
+                )}
+              </Links>
+            )}
+
+            {research.involvements && research.involvements.length > 0 && (
+              <Contribution>
+                <BulletPoints bulletPoints={research.involvements} />
+              </Contribution>
+            )}
+          </Item>
+        );
+      })}
+    </List>
   );
 }
 

@@ -1,82 +1,71 @@
 import React from "react";
-import data from "../../data.json";
 import styled from "styled-components";
-import { SubTitle2 } from "../../components/utils";
-import { useContext } from "react";
-import { ThemeContext } from "../../components/context/Theme";
+import data from "../../data.json";
 import Technology from "../../components/Technology";
-import Title from "../../components/Title";
 
-const Container = styled.div`
-  margin: 36px 0;
+const Intro = styled.p`
+  max-width: 66ch;
+  margin-bottom: 24px;
+  color: var(--ink-2);
 `;
 
-const P = styled.p`
-  margin-bottom: 16px;
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-`;
-
-const SkillContainer = styled.div`
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-  border: 1px solid ${(props) => props.theme.colors.border};
-  background-color: ${(props) => props.theme.colors.bgCard};
-  width: 100%;
-  margin: 16px 0;
+const Rows = styled.dl`
+  margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 `;
 
-const SubTitleSecond = styled(SubTitle2)`
-  width: fit-content;
-  padding-right: 64px;
-  border-bottom: 2px solid ${(props) => props.theme.colors.title};
-  font-size: large;
-  @media (max-width: 768px) {
-    font-size: medium;
+const Row = styled.div`
+  display: grid;
+  gap: 12px 24px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  &:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  @media (min-width: 720px) {
+    grid-template-columns: 180px minmax(0, 1fr);
   }
 `;
 
-const ItemContainer = styled.div`
-  display: flex;
-  gap: 16px;
+const Label = styled.dt`
+  font-family: var(--font-display);
+  font-weight: 650;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ink);
 `;
 
-const IndividualSkill = ({ title, items }) => {
-  const { theme } = useContext(ThemeContext);
-  return (
-    <SkillContainer theme={theme}>
-      <SubTitleSecond theme={theme}>{title}</SubTitleSecond>
-      <ItemContainer>
-        <Technology technologies={items} />
-      </ItemContainer>
-    </SkillContainer>
-  );
-};
+const Items = styled.dd`
+  margin: 0;
+`;
 
 function Skill() {
-  const languages = data.about.skills.languages;
-  const web_dev = data.about.skills.web_dev;
-  const tools = data.about.skills.tools;
-  const descriptions = data.about.skills.descriptions;
-  const data_science = data.about.skills.data_science;
+  const { languages, web_dev, tools, descriptions, data_science } = data.about.skills;
+  const groups = [
+    { title: "AI/ML tools and techniques", items: data_science },
+    { title: "Languages", items: languages },
+    { title: "Web development", items: web_dev },
+    { title: "Other tools", items: tools },
+  ];
 
   return (
-    <Container>
-      <Title>Skills and Toolsets</Title>
-      <P dangerouslySetInnerHTML={{ __html: descriptions }}></P>
-      <IndividualSkill
-        title={"AI/ML Tools & Techniques"}
-        items={data_science}
-      ></IndividualSkill>
-      <IndividualSkill title={"Languages"} items={languages}></IndividualSkill>
-      <IndividualSkill title={"Web Dev"} items={web_dev}></IndividualSkill>
-      <IndividualSkill title={"Others"} items={tools}></IndividualSkill>
-    </Container>
+    <>
+      {descriptions && (
+        <Intro dangerouslySetInnerHTML={{ __html: descriptions }} />
+      )}
+      <Rows>
+        {groups.map((group) => (
+          <Row key={group.title}>
+            <Label>{group.title}</Label>
+            <Items>
+              <Technology technologies={group.items} tint={false} label={group.title} />
+            </Items>
+          </Row>
+        ))}
+      </Rows>
+    </>
   );
 }
 

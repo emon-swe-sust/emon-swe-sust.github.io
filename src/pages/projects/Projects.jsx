@@ -1,24 +1,32 @@
-import React, { useContext } from "react";
-import { BodyContainer } from "../../App";
-import { SectionContainer } from "../../components/utils";
-import { ThemeContext } from "../../components/context/Theme";
-import data from "./../../data.json";
+import React from "react";
+import styled from "styled-components";
+import data from "../../data.json";
 import System from "./System";
-import Title from "../../components/Title";
 import NextPage from "../../components/NextPage";
+import { Page, PageTitle, Shell } from "../../components/ui";
+
+const List = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 24px;
+`;
 
 function Projects() {
-  const { theme } = useContext(ThemeContext);
   return (
-    <BodyContainer theme={theme}>
-      <Title>Major Projects</Title>
-      <SectionContainer>
-        {data.projects.map((project, idx) => (
-          <System key={idx} system={project} />
-        ))}
-      </SectionContainer>
-      <NextPage to="/education">Education & Activities</NextPage>
-    </BodyContainer>
+    <Page tone="project">
+      <Shell>
+        <PageTitle>Major Projects</PageTitle>
+        <List>
+          {data.projects.map((project, idx) => (
+            <System key={idx} system={project} />
+          ))}
+        </List>
+      </Shell>
+      <NextPage to="/education" tone="edu">
+        Education &amp; Activities
+      </NextPage>
+    </Page>
   );
 }
 

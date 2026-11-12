@@ -1,26 +1,51 @@
 import React from "react";
+import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import {
-  ContentContainer,
-  ContentTitle,
-  SectionComponentContainer,
-} from "../../components/utils";
-import { useContext } from "react";
-import { ThemeContext } from "../../components/context/Theme";
-import SectionTop from "../../components/SectionTop";
+  Entity,
+  ExtLink,
+  ItemDate,
+  ItemTitle,
+  MetaItem,
+  MetaList,
+  Timeline,
+  TimelineItem,
+} from "../../components/ui";
 import BulletPoints from "../../components/BulletPoints";
 import Technology from "../../components/Technology";
+import { tidyRange } from "../../components/format";
 
-function Company({ company }) {
-  const { theme } = useContext(ThemeContext);
+const Place = ({ job }) =>
+  job.location ? (
+    <MetaList>
+      <MetaItem icon={faLocationDot}>
+        <ExtLink href={job.location_link}>{job.location}</ExtLink>
+      </MetaItem>
+    </MetaList>
+  ) : null;
+
+function Company({ roles }) {
+  const first = roles[0];
+  const sharedPlace = new Set(roles.map((r) => r.location)).size === 1;
+
   return (
-    <SectionComponentContainer theme={theme}>
-      <SectionTop section={company} />
-      <ContentContainer>
-        <ContentTitle theme={theme}>My involvements</ContentTitle>
-        <Technology technologies={company.technologies} />
-      </ContentContainer>
-      <BulletPoints bulletPoints={company.involvements} gap={"8px"} />
-    </SectionComponentContainer>
+    <Entity
+      logo={first["logo-light"]}
+      name={first.title}
+      href={first.title_link}
+      meta={sharedPlace ? <Place job={first} /> : null}
+    >
+      <Timeline $line={roles.length > 1}>
+        {roles.map((job, idx) => (
+          <TimelineItem key={idx}>
+            <ItemDate>{tidyRange(job.year)}</ItemDate>
+            <ItemTitle>{tidyRange(job.titleSecond)}</ItemTitle>
+            {!sharedPlace && <Place job={job} />}
+            <Technology technologies={job.technologies} />
+            <BulletPoints bulletPoints={job.involvements} />
+          </TimelineItem>
+        ))}
+      </Timeline>
+    </Entity>
   );
 }
 

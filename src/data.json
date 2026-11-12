@@ -1,22 +1,30 @@
 {
   "about": {
     "descriptions": [
-      "Hello, I am a Lecturer in the Institute of Information and Communication Technology at Shahjalal University of Science and Technology (SUST), Sylhet, since November 2023. I teach a range of foundational and advanced courses including Software Verification and Validation, Software Architecture and Design Pattern, Data Structures, Algorithm Design and Analysis, Competitive Programming, and Introduction to Software Engineering. I also mentor undergraduate students in their thesis and research projects.",
-      "Before joining SUST, I worked as a Software Engineer at Dynamic Solution Innovators (DSi) for over two and a half years. During that time, I was involved in impactful projects such as OpenCRVS (a civil registration platform) and InfoReach (a banking solution). I continue to collaborate with DSi as a consultant alongside my academic responsibilities.",
-      "My current research focuses on the intersection of Software Engineering and Artificial Intelligence, particularly enhancing software reliability, program analysis, optimizing software maintenance, automating software engineering processes, such as finding and fixing bugs, generating test cases, and building smarter developer tools. I am currently leading two research projects in this area in collaboration with undergraduate students. I aim to pursue a Ph.D. in Software Engineering, with a focus on intelligent systems and AI-assisted software development tools, to contribute further to the field through research and innovation.  "
+      "Hello, I am an M.Sc. student at the University of Calgary, Canada, doing a thesis-based degree in the LASSO Lab (Learning & Analytics for Software System Operations).",
+      "I am a Lecturer in the Institute of Information and Communication Technology (IICT) at Shahjalal University of Science and Technology (SUST), Sylhet, since November 2023, and I am currently on leave from SUST for my studies. At SUST I taught Software Verification and Validation, Software Architecture and Design Pattern, Data Structures, Algorithm Design and Analysis, Competitive Programming, and Introduction to Software Engineering, and I mentored undergraduate students in their thesis and research projects.",
+      "Before joining SUST, I worked as a Software Engineer at Dynamic Solution Innovators (DSi) for over two and a half years. During that time, I was involved in impactful projects such as OpenCRVS (a civil registration platform) and InfoReach (a banking solution).",
+      "My main research focus is on smoothing the way software gets built and shipped: software build systems, CI/CD pipelines, and software release. I am also interested in empirical software engineering and in how LLMs can support developer tools."
     ],
     "researchInterest": [
-      "Automated software development tools; software integration and maintenance",
-      "Software testing, fault localization, and automated bug fixing",
+      "Software build systems; making builds faster, more reliable and easier to maintain",
+      "CI/CD pipelines and DevOps practices",
+      "Software release engineering",
       "Empirical studies in software engineering",
-      "Software performance optimization; software architecture and requirements engineering",
+      "Software testing, fault localization, and automated bug fixing",
       "LLM-enhanced tools; applications of LLMs in software engineering",
-      "Applications of AI/ML in applied domains (e.g., healthcare, transportation, finance)",
-      "Human Computer Interaction (HCI) and user experience design"
+      "Automated software development tools; software integration and maintenance"
     ],
     "skills": {
       "descriptions": "",
-      "languages": ["JavaScript", "Typescript", "Java", "C", "C++", "Python"],
+      "languages": [
+        "JavaScript",
+        "Typescript",
+        "Java",
+        "C",
+        "C++",
+        "Python"
+      ],
       "web_dev": [
         "ReactJS",
         "Angular",
@@ -106,6 +114,15 @@
   },
   "education": [
     {
+      "title": "University of Calgary",
+      "title_link": "https://www.ucalgary.ca/",
+      "year": "In progress",
+      "titleSecond": "M.Sc. (thesis-based), LASSO Lab",
+      "description": "Thesis research on smoothing software build systems, CI/CD and software release, in the LASSO Lab (Learning & Analytics for Software System Operations).",
+      "location": "Calgary, Alberta, Canada",
+      "location_link": "https://maps.google.com/?q=University+of+Calgary"
+    },
+    {
       "title": "Shahjalal University of Science and Technology",
       "title_link": "http://sust.edu/",
       "logo-light": "sust-logo.png",
@@ -149,8 +166,16 @@
       "year": "2016-2018",
       "titleSecond": "Higher Secondary Certificate",
       "course_works": {
-        "first_row": ["Physics", "Chemistry", "Mathematics"],
-        "second_row": ["ICT", "Biology", "English"]
+        "first_row": [
+          "Physics",
+          "Chemistry",
+          "Mathematics"
+        ],
+        "second_row": [
+          "ICT",
+          "Biology",
+          "English"
+        ]
       },
       "location": "Peelkhana, Dhaka, Bangladesh",
       "location_link": "https://goo.gl/maps/hmM1eAUXer1zfuwr6"
@@ -164,8 +189,16 @@
       "year": "2005-2015",
       "titleSecond": "Secondary School Certificate",
       "course_works": {
-        "first_row": ["Physics", "Chemistry", "Mathematics"],
-        "second_row": ["Bangla", "Biology", "English"]
+        "first_row": [
+          "Physics",
+          "Chemistry",
+          "Mathematics"
+        ],
+        "second_row": [
+          "Bangla",
+          "Biology",
+          "English"
+        ]
       },
       "location": "Narsingdi, Dhaka, Bangladesh",
       "location_link": "https://goo.gl/maps/gBXkQ5mqbBGDnuN67"
@@ -173,11 +206,24 @@
   ],
   "experience": [
     {
+      "title": "University of Calgary",
+      "title_link": "https://www.ucalgary.ca/",
+      "year": "Present",
+      "titleSecond": "M.Sc. Student, LASSO Lab",
+      "technologies": [],
+      "involvements": [
+        "Thesis research on smoothing software build systems, CI/CD pipelines and software release.",
+        "Member of the <a href=\"https://lasso-lab.com/team/mahfuzur-emon\">LASSO Lab</a> (Learning & Analytics for Software System Operations)."
+      ],
+      "location": "Calgary, Alberta, Canada",
+      "location_link": "https://maps.google.com/?q=University+of+Calgary"
+    },
+    {
       "title": "Shahjalal University of Science and Technology",
       "title_link": "https://www.sust.edu",
       "logo-light": "sust-logo.png",
       "logo-dark": "sust-logo.png",
-      "year": "Nov 2023 - Present",
+      "year": "Nov 2023 - Present (on leave)",
       "titleSecond": "Lecturer - Software Engineering, IICT",
       "technologies": [],
       "involvements": [
@@ -368,7 +414,9 @@
     },
     {
       "title": "Shared Health Record",
-      "pictures": ["/projects/SHR/1.png"],
+      "pictures": [
+        "/projects/SHR/1.png"
+      ],
       "year": "Sep 2022 - Apr 2023",
       "titleSecond": "Health Information Exchange, working around OpenHIE model",
       "association_with": "DSi",
@@ -403,7 +451,9 @@
     {
       "title": "Student Information System",
       "title_link": "https://student-infosys.onrender.com/",
-      "pictures": ["/projects/SIS/1.png"],
+      "pictures": [
+        "/projects/SIS/1.png"
+      ],
       "year": "April 2023",
       "github_link": "https://github.com/emon-swe-sust/SMS",
       "titleSecond": "The platform that enables students and teachers to work smarter and more efficiently.",
@@ -444,7 +494,11 @@
       "github_link": "https://github.com/emon-swe-sust/Metal_Slug",
       "titleSecond": "A 2d shooting game",
       "association_with": "Personal",
-      "technologies": ["Java", "libGDX", "Box2D"],
+      "technologies": [
+        "Java",
+        "libGDX",
+        "Box2D"
+      ],
       "features": [
         "The game features a hero with the ability to jump, move forward, and retreat backwards with agility.",
         "The hero can only withstand up to three bullets throughout the game.",
@@ -470,7 +524,10 @@
       "github_link": "https://github.com/emon-swe-sust/portfolio",
       "titleSecond": "A detailed portfolio to introduce myself.",
       "association_with": "Personal",
-      "technologies": ["Javascript", "ReactJS"],
+      "technologies": [
+        "Javascript",
+        "ReactJS"
+      ],
       "features": [
         "Introduction on landing page of portfolio to have a full overview.",
         "Detailed overview of my experience and my activity on Experience page.",
@@ -493,7 +550,11 @@
       "github_link": "https://github.com/emon-swe-sust/FileHub",
       "titleSecond": "A simple tcp file sharing system",
       "association_with": "Personal",
-      "technologies": ["Python", "tkinter", "Socket programming"],
+      "technologies": [
+        "Python",
+        "tkinter",
+        "Socket programming"
+      ],
       "features": [
         "Server creation: The system allows creating a server that enables clients to see and download files from it.",
         "Active client connections: The server allows checking the active client connections and their respective IP addresses.",
@@ -509,12 +570,19 @@
     },
     {
       "title": "Tracker",
-      "pictures": ["/projects/tracker/1.jpg", "/projects/tracker/2.jpg"],
+      "pictures": [
+        "/projects/tracker/1.jpg",
+        "/projects/tracker/2.jpg"
+      ],
       "year": "February 2020",
       "github_link": "https://github.com/emon-swe-sust/Tracker",
       "titleSecond": "An android app build to track SUST transports.",
       "association_with": "Personal",
-      "technologies": ["C++", "Java", "php"],
+      "technologies": [
+        "C++",
+        "Java",
+        "php"
+      ],
       "features": [
         "Capable of providing the bus schedule for the university.",
         "Capable of searching intended bus and track the bus location.",
@@ -528,6 +596,17 @@
     }
   ],
   "researches": [
+    {
+      "title": "Smoothing Software Builds, CI/CD and Releases (M.Sc. thesis)",
+      "info": "Ongoing Research",
+      "doi": "",
+      "website": "https://lasso-lab.com/team/mahfuzur-emon",
+      "dataset": "",
+      "link": "",
+      "year": "Present",
+      "description": "My M.Sc. thesis at the University of Calgary, in the LASSO Lab, focuses on making software build systems, CI/CD pipelines and software release smoother.",
+      "involvements": []
+    },
     {
       "title": "Reviewer Recommendation using LLMs in Pull Requests",
       "info": "Ongoing Research",

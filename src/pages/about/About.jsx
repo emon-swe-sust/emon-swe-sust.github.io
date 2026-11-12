@@ -1,204 +1,95 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../../components/context/Theme";
+import React from "react";
 import styled from "styled-components";
+import data from "../../data.json";
 import Header from "./Header";
-import { BodyContainer } from "../../App";
-import { animated } from "react-spring";
-import CV from "./CV";
-import degree from "./../../data.json";
-import Skill from "./Skill";
-import Title from "./../../components/Title";
-import NextPage from "../../components/NextPage";
 import Research from "./Research";
-import { TitleLabel } from "../../components/utils";
-import BulletPoints from "../../components/BulletPoints";
-import Email from "./Email";
-import {
-  ContactItem,
-  StyledIcon,
-} from "../../components/sidebar/SidebarContent";
-import { Link } from "react-router-dom";
+import Skill from "./Skill";
+import Games from "./Games";
+import NextPage from "../../components/NextPage";
+import { Page, Section } from "../../components/ui";
 
-const ProfilePicture = styled.img`
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const ProfileContainer = styled.div`
-  padding: 16px 0;
+const Prose = styled.div`
   display: flex;
-  gap: 16px;
-  @media (max-width: 1100px) {
-    flex-direction: column-reverse;
-  }
-  z-index: 40;
-`;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 66ch;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--ink-2);
 
-const NameContainer = styled.div`
-  color: ${(props) => props.theme.colors.title};
-  gap: 4px;
-  margin-top: 12px;
-  font-size: x-large;
-  width: 100%;
-  text-align: center;
-  font-family: "Patua One", cursive;
-`;
-
-const ProfileInfoContainer = styled.div`
-  width: 60%;
-  align-items: center;
-  @media (max-width: 1100px) {
-    width: 100%;
+  p:first-child {
+    color: var(--ink);
   }
 `;
 
-const Container = styled.div`
-  margin-top: 400px;
-  position: sticky;
-  top: 48px;
-  z-index: 3;
-  @media (max-width: 768px) {
-    margin-top: 250px;
+const Interests = styled.ul`
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  column-gap: 40px;
+  @media (min-width: 720px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 `;
 
-const DPContainer = styled.div`
-  margin-left: auto;
+const Interest = styled.li`
+  display: flex;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
 
-  @media (max-width: 1100px) {
-    margin: auto;
-    align-items: center;
+  &::before {
+    content: "";
+    flex: none;
+    width: 9px;
+    height: 9px;
+    margin-top: 0.5em;
+    border-radius: 2px;
+    background: var(--accent);
   }
 `;
 
-const P = styled.p`
-  margin-bottom: 16px;
-  @media (max-width: 768px) {
-    font-size: 12px;
-  }
-`;
-
-function About({ headerInitialHeight }) {
-  const { theme } = useContext(ThemeContext);
-  const [height, setHeight] = useState(headerInitialHeight);
-  // const styles = useSpring({
-  //   from: { rotateZ: 320, opacity: 0 },
-  //   to: { rotateZ: 360, opacity: 1 },
-  //   config: { tension: 50, friction: 20 },
-  // });
-
-  useEffect(() => {
-    setHeight(headerInitialHeight);
-
-    const handleScroll = () => {
-      const { scrollTop } = document.documentElement;
-      const newHeight = Math.max(0, headerInitialHeight - scrollTop);
-      setHeight(newHeight);
-    };
-
-    document.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, [headerInitialHeight]);
-
+function About() {
+  const { descriptions, researchInterest } = data.about;
   return (
-    <div>
-      <Header height={height} />
+    <Page tone="research">
+      <Header />
+      <Section title="About me">
+        <Prose>
+          {descriptions.map((description, idx) => (
+            <p key={idx}>{description.trim()}</p>
+          ))}
+        </Prose>
+      </Section>
 
-      <BodyContainer theme={theme}>
-        <Container>
-          <Title>About Me</Title>
-          <ProfileContainer>
-            <ProfileInfoContainer>
-              {degree.about.descriptions.map((description, idx) => (
-                <P key={idx}>{description}</P>
-              ))}
-              <CV />
-            </ProfileInfoContainer>
-            <DPContainer>
-              <animated.div>
-                {" "}
-                {/**style={styles} */}
-                <ProfilePicture src="/emon_dp.jpeg" />
-                <NameContainer theme={theme}>
-                  Mahfuzur Rahman Emon
-                </NameContainer>
-                <div
-                  style={{
-                    width: "100%",
-                    textAlign: "center",
-                    fontSize: "large",
-                  }}
-                >
-                  Lecturer, IICT, SUST
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "8px",
-                    marginTop: "16px",
-                    justifyContent: "center",
-                  }}
-                >
-                  <StyledIcon
-                    src="/icons/mail.png"
-                    onClick={() =>
-                      (window.location.href = "mailto:emon-iict@sust.edu")
-                    }
-                  />
-                  <Link
-                    to="https://www.sust.edu/institutes/iict/faculty/emon-iict@sust.edu"
-                    target="_blank"
-                  >
-                    <StyledIcon src="/sust-logo.png" />
-                  </Link>
-                  <Link
-                    to="https://scholar.google.com/citations?user=ugFyqqEAAAAJ&hl=en"
-                    target="_blank"
-                  >
-                    <StyledIcon src="icons/google_scholar.png" />
-                  </Link>
-                  <Link
-                    to="https://www.linkedin.com/in/emon-swe-sust/"
-                    target="_blank"
-                  >
-                    <StyledIcon src="/icons/linkedin.png" target="_blank" />
-                  </Link>
-                  <Link to="https://github.com/emon-swe-sust" target="_blank">
-                    <StyledIcon
-                      src={
-                        theme.variant === "light"
-                          ? "/icons/github-dark.png"
-                          : "/icons/github-light.png"
-                      }
-                    />
-                  </Link>
-                </div>
-              </animated.div>
-            </DPContainer>
-          </ProfileContainer>
-          <TitleLabel theme={theme} style={{ marginBottom: "24px" }}>
-            Research Interest
-          </TitleLabel>
-          <BulletPoints
-            bulletPoints={degree.about.researchInterest}
-            gap={"8px"}
-          />
-          <Research />
-          <Skill />
-          <NextPage to="/experience">Career Journey</NextPage>
-        </Container>
-      </BodyContainer>
-      {/* <Email /> */}
-    </div>
+      <Section title="Research interests" band>
+        <Interests>
+          {researchInterest.map((interest, idx) => (
+            <Interest key={idx}>{interest}</Interest>
+          ))}
+        </Interests>
+      </Section>
+
+      <Section id="research" title="Research involvements">
+        <Research />
+      </Section>
+
+      <Section title="Skills and toolsets" band>
+        <Skill />
+      </Section>
+      <Section id="game" title="Play">
+        <Games />
+      </Section>
+      <NextPage to="/experience" tone="career">
+        Career Journey
+      </NextPage>
+    </Page>
   );
 }
 

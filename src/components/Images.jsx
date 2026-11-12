@@ -1,91 +1,128 @@
-import React, { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
-import { ThemeContext } from "./context/Theme";
+import React, { useEffect, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLeftLong, faRightLong } from "@fortawesome/free-solid-svg-icons";
-import { useSpring, animated } from "react-spring";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { asset } from "./format";
 
-const Container = styled.div`
-  background-color: ${(props) => props.theme.colors.bg};
-  color: ${(props) => props.theme.colors.primary};
+const spin = keyframes`
+  to { transform: rotate(360deg); }
 `;
 
-const ImageContainer = styled.div``;
-
-const BigImg = styled.img`
-  max-height: 80vh;
-  max-width: 80vw;
-  @media (max-width: 768px) {
-    max-width: 100vw;
-  }
-  cursor: pointer;
-  border: 1px solid ${(props) => props.theme.colors.title};
-  opacity: ${(props) => (props.loaded ? "1" : ".5")};
+const Frame = styled.div`
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: min(86vw, 320px);
+  min-height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
 `;
 
-const ButtnContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
+const Shot = styled.img`
+  display: block;
+  max-width: min(92vw, 1100px);
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: ${(p) => (p.$loaded ? 1 : 0)};
+  transition: opacity 0.2s ease;
 `;
 
-const StyledButton = styled.button`
-  margin: 8px 0;
-  border: none;
+const Spinner = styled.span`
+  position: absolute;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  padding: 12px;
+  border: 3px solid var(--line-strong);
+  border-top-color: var(--ink);
+  animation: ${spin} 0.8s linear infinite;
+`;
 
-  background-color: ${(props) => props.theme.colors.btnSuccess};
-  :hover {
-    background-color: ${(props) => props.theme.colors.btnHover};
+const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 4px 4px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink-2);
+`;
+
+const Step = styled.button`
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line-strong);
+  &:hover:not(:disabled) {
+    border-color: var(--ink);
   }
-
-  :disabled {
-    background-color: ${(props) => props.theme.colors.btnError};
+  &:disabled {
+    opacity: 0.35;
     cursor: not-allowed;
   }
-  @media (max-width: 768px) {
-    padding: 4px;
-  }
 `;
 
-function Images({ images }) {
-  const { theme } = useContext(ThemeContext);
-  const [imgId, setImgId] = useState(0);
-  const [imgLoaded, setImgLoaded] = useState(false);
+function Images({ images, title = "Project" }) {
+  const [index, setIndex] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const last = images.length - 1;
 
   useEffect(() => {
-    setImgLoaded(false);
-  }, [imgId]);
+    setLoaded(false);
+  }, [index]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "ArrowLeft") setIndex((i) => Math.max(0, i - 1));
+      if (e.key === "ArrowRight") setIndex((i) => Math.min(last, i + 1));
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [last]);
 
   return (
-    <Container theme={theme}>
-      <ImageContainer>
-        <BigImg
-          src={images[imgId]}
-          theme={theme}
-          onLoad={() => setImgLoaded(true)}
-          loaded={imgLoaded}
+    <div>
+      <Frame>
+        {!loaded && <Spinner aria-hidden="true" />}
+        <Shot
+          src={asset(images[index])}
+          alt={`${title} screenshot ${index + 1} of ${images.length}`}
+          onLoad={() => setLoaded(true)}
+          $loaded={loaded}
         />
-      </ImageContainer>
-      <ButtnContainer>
-        <StyledButton
-          disabled={imgId < 1 || !imgLoaded}
-          onClick={() => setImgId(imgId - 1)}
-          theme={theme}
-          style={{ color: "white" }}
-        >
-          <FontAwesomeIcon size="2xl" icon={faLeftLong} />
-        </StyledButton>
-        <StyledButton
-          disabled={imgId >= images.length - 1 || !imgLoaded}
-          onClick={() => setImgId(imgId + 1)}
-          style={{ color: "white" }}
-          theme={theme}
-        >
-          <FontAwesomeIcon size={"2xl"} icon={faRightLong} />
-        </StyledButton>
-      </ButtnContainer>
-    </Container>
+      </Frame>
+      {images.length > 1 && (
+        <Controls>
+          <Step
+            type="button"
+            onClick={() => setIndex(index - 1)}
+            disabled={index === 0}
+            aria-label="Previous screenshot"
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </Step>
+          <span aria-live="polite">
+            {index + 1} / {images.length}
+          </span>
+          <Step
+            type="button"
+            onClick={() => setIndex(index + 1)}
+            disabled={index === last}
+            aria-label="Next screenshot"
+          >
+            <FontAwesomeIcon icon={faArrowRight} />
+          </Step>
+        </Controls>
+      )}
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ import Experience from "./pages/experience/Experience";
 import Projects from "./pages/projects/Projects";
 import { initGA, trackPageView } from "./analytics";
 
-function Router(props) {
+function Router() {
   const location = useLocation();
   useEffect(() => {
     initGA();
@@ -17,21 +17,14 @@ function Router(props) {
   }, [location]);
 
   return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={<About headerInitialHeight={props.headerInitialHeight} />}
-        />
-        <Route
-          path="/about"
-          element={<About headerInitialHeight={props.headerInitialHeight} />}
-        />
-        <Route path="/education" element={<Education />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/project" element={<Projects />} />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<About />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/education" element={<Education />} />
+      <Route path="/experience" element={<Experience />} />
+      <Route path="/project" element={<Projects />} />
+      <Route path="*" element={<About />} />
+    </Routes>
   );
 }
 

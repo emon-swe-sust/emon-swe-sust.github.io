@@ -1,24 +1,27 @@
-import React, { useContext } from "react";
-import { BodyContainer } from "../../App";
-import { ThemeContext } from "../../components/context/Theme";
+import React from "react";
 import data from "../../data.json";
-import { SectionContainer } from "../../components/utils";
 import Company from "./Company";
-import Title from "../../components/Title";
 import NextPage from "../../components/NextPage";
+import { Page, PageTitle, Shell } from "../../components/ui";
+import { groupConsecutive } from "../../components/format";
 
 function Experience() {
-  const { theme } = useContext(ThemeContext);
+  // Roles at the same organisation that follow each other (e.g. intern, junior,
+  // assistant engineer) are shown as one organisation with a timeline.
+  const groups = groupConsecutive(data.experience, (job) => job.title);
+
   return (
-    <BodyContainer theme={theme}>
-      <Title>Career Journey</Title>
-      <SectionContainer>
-        {data.experience.map((company, idx) => (
-          <Company company={company} key={idx} />
+    <Page tone="career">
+      <Shell>
+        <PageTitle>Career Journey</PageTitle>
+        {groups.map((group, idx) => (
+          <Company key={idx} roles={group.items} />
         ))}
-      </SectionContainer>
-      <NextPage to="/project">Major Projects</NextPage>
-    </BodyContainer>
+      </Shell>
+      <NextPage to="/project" tone="project">
+        Major Projects
+      </NextPage>
+    </Page>
   );
 }
 
