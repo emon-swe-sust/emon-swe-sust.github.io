@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Admin panel (local editing of `src/data.json`)
+
+Run `npm start`, then open <http://localhost:3000/#/admin>.
+
+- Create, edit, duplicate, reorder and delete everything the site renders from `src/data.json`; upload images into `public/`.
+- Edits stay in a draft until you press **Save changes**, which rewrites `src/data.json` in its existing format (the previous version is kept in `.admin-backups/`, git-ignored).
+- Publish as usual afterwards: review with `git diff`, commit, `npm run deploy`.
+- The admin only exists in the dev server. `npm run build` / the deployed site contain none of its code, and its API only accepts requests from this machine.
+- Checks: `npm test -- --watchAll=false src/admin` and `node scripts/admin-api-smoke-test.js .`
+- Hero/footer/nav details live in `src/profile.js`, not `data.json`, so the admin doesn't edit them.
