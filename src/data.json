@@ -159,7 +159,6 @@
       "title_link": "http://sust.edu/",
       "logo-light": "sust-logo.png",
       "logo-dark": "sust-logo.png",
-      "logo-box": true,
       "cgpa": "3.89/4.00 [2nd/50]",
       "year": "2018-2022",
       "titleSecond": "B.Sc. in Software Engineering",
@@ -188,14 +187,14 @@
       },
       "location": "Akhalia, Sylhet, Bangladesh",
       "location_link": "https://goo.gl/maps/SydSEEfiUQ31hV34A",
-      "description": "Shahjalal University of Science and Technology (SUST) is a public research university in Sylhet, Bangladesh. It offers undergraduate and graduate programs in science, engineering, and humanities across eight schools."
+      "description": "Shahjalal University of Science and Technology (SUST) is a public research university in Sylhet, Bangladesh. It offers undergraduate and graduate programs in science, engineering, and humanities across eight schools.",
+      "logo-box": true
     },
     {
       "title": "Birshreshtha Munshi Abdur Rouf Public College, BMRPC",
       "title_link": "https://abdurroufcollege.ac.bd/",
       "logo-light": "BMARPC.png",
       "logo-dark": "BMARPC.png",
-      "logo-box": true,
       "gpa": "5.00/5.00",
       "year": "2016-2018",
       "titleSecond": "Higher Secondary Certificate",
@@ -219,7 +218,6 @@
       "title_link": "https://en.wikipedia.org/wiki/Brahmondi_Kamini_Kishore_Moulik_Government_High_School",
       "logo-light": "KKM.png",
       "logo-dark": "KKM.png",
-      "logo-box": true,
       "gpa": "5.00/5.00",
       "year": "2005-2015",
       "titleSecond": "Secondary School Certificate",

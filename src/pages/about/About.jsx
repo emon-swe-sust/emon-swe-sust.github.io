@@ -13,7 +13,9 @@ const Prose = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 66ch;
+  max-width: none; 
+  width: 100%; 
+  text-align: justify;
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--ink-2);
