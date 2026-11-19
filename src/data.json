@@ -302,10 +302,10 @@
         "MongoDB"
       ],
       "involvements": [
-        "Contributing building pages to help clients to manage their audiences, analysis audience responses, generate bills for their audiences and so on.",
-        "Engaged in a sizable Spring MVC project tailored for orchestrating campaign-driven offers, advertisements, and direct mail operations.",
-        "Developing RESTful services utilizing Spring Boot, Express.js, and Node.js to facilitate streamlined AJAX calls and incorporate sophisticated functionalities.",
-        "Engaged in the construction of a bespoke editor using React.js, empowering users to craft tailored email, SMS, and advertising campaigns for specific audiences."
+        "Built pages that helped clients manage their audiences, analyze audience responses, generate bills for their audiences and so on.",
+        "Worked on a sizable Spring MVC project tailored for orchestrating campaign-driven offers, advertisements, and direct mail operations.",
+        "Developed RESTful services utilizing Spring Boot, Express.js, and Node.js to facilitate streamlined AJAX calls and incorporate sophisticated functionalities.",
+        "Built a bespoke editor using React.js, empowering users to craft tailored email, SMS, and advertising campaigns for specific audiences."
       ],
       "location": "Mohakhali DOHS, Dhaka, Bangladesh",
       "location_link": "https://goo.gl/maps/Co6Z6tzxCiefe1KcA"
@@ -331,7 +331,7 @@
         "nginx"
       ],
       "involvements": [
-        "Involved in the development of the Health Data Architecture(HDA), a groundbreaking product from A2i. My responsibilities include constructing a microservice bus, creating an adapter for Health service provider systems and developing a patient portal to link patient with HDA",
+        "Was involved in the development of the Health Data Architecture (HDA), a groundbreaking product from A2i. My responsibilities included constructing a microservice bus, creating an adapter for Health service provider systems and developing a patient portal to link patient with HDA",
         "Collaborated with the <a href=\"https://www.opencrvs.org/\">OpenCRVS</a> team to enhance the Client Microservice, with a focus on Record Audit, Work Queue, Duplicate Records, Application Configuration, Team, Header, Component Library, and Settings. Designed and developed the Left Navigation feature from scratch.",
         "Also made contributions on <a href=\"https://www.opencrvs.org/\">OpenCRVS</a> with other microservices such as User-Management and API-Gateway and also wrote unit tests and conducted code reviews."
       ],
